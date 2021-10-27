@@ -35,7 +35,7 @@ Using this template you will be able to leverage lots of built-in components and
 
 - TailwindCSS
 - Respondive Layout
-- Tables (builded with datatables)
+- Tables
 - Charts (builded with Chart.js)
 - Notification
 - Icons

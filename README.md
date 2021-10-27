@@ -12,11 +12,6 @@ Osiris is a free and open-sourced pure css themed Angular 12 starter project, fo
 |   |    |    ├── home-components   # Components for home page
 │   │    │    ├── partials          # All partials components 
 │   │    │    └── shared            # All shared components
-│   │    ├── layouts                # Where define to find all pages that renderize components
-│   │    │    ├── main              # Dashboard Page
-│   │    │    └── login             # Login Page
-│   │    ├── views                  # Where all pages was mounted
-│   │    │    └── dashboard         # Dashboard home page
 │   │    ├── app-routing.module.ts  # Angular routes file
 │   │    └── app.module.ts          # All modules imported
 │   ├── integration                 # End-to-end, integration tests (alternatively `e2e`)

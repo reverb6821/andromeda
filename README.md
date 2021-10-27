@@ -46,7 +46,7 @@ Using this template you will be able to leverage lots of built-in components and
 You can start by cloning the latest version of Osiris on your local machine by running:
 
 1. Clone it on your Folder
-```$ git clone git@github.com:reverb6821/admindesk.git ```
+```$ git clone git@github.com:reverb6821/osiris.git ```
 2. Move on project's folder and install all dependencies you need
 ```$ npm install ```
 3. Launch it with npm commands.

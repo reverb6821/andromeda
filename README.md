@@ -9,7 +9,6 @@ Osiris is a free and open-sourced pure css themed Angular 12 starter project, fo
 ├── src                             # Main root file
 │   ├── app                         # Load and stress tests
 │   │    ├── components             # All Angular component for the template
-|   |    |    ├── home-components   # Components for home page
 │   │    │    ├── partials          # All partials components 
 │   │    │    └── shared            # All shared components
 │   │    ├── app-routing.module.ts  # Angular routes file
@@ -44,7 +43,7 @@ Using this template you will be able to leverage lots of built-in components and
 - 404 & 500 page errors
 
 ### How to start
-You can start by cloning the latest version of AdminDesk on your local machine by running:
+You can start by cloning the latest version of Osiris on your local machine by running:
 
 1. Clone it on your Folder
 ```$ git clone git@github.com:reverb6821/admindesk.git ```

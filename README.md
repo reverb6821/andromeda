@@ -1,6 +1,6 @@
-# Osiris - Admin Dashboard
+# Orion - Admin Dashboard
 
-Osiris is a free and open-sourced pure css themed Angular 12 starter project, focused on management for WebApp and E-Commerce.
+Orion is a free and open-sourced pure css themed Angular 12 starter project, focused on management for WebApp and E-Commerce.
 
 ### Project Structure
 
@@ -43,10 +43,10 @@ Using this template you will be able to leverage lots of built-in components and
 - 404 & 500 page errors
 
 ### How to start
-You can start by cloning the latest version of Osiris on your local machine by running:
+You can start by cloning the latest version of Orion - Admin Dashboard on your local machine by running:
 
 1. Clone it on your Folder
-```$ git clone git@github.com:reverb6821/osiris.git ```
+```$ git clone git@github.com:reverb6821/orion.git ```
 2. Move on project's folder and install all dependencies you need
 ```$ npm install ```
 3. Launch it with npm commands.

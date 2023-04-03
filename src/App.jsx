@@ -1,10 +1,9 @@
 import React from 'react'
-
-function App() {
-
+import Admin from './layout/admin/Admin'
+function App () {
   return (
     <div className="App">
-      
+      <Admin />
     </div>
   )
 }

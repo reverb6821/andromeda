@@ -2,6 +2,7 @@ import React from 'react'
 
 import Welcome from '../../components/dashboard/Welcome'
 import Stats from '../../components/dashboard/Stats'
+import LineChart from '../../components/dashboard/LineChart'
 
 import { FcHome } from 'react-icons/fc'
 
@@ -24,7 +25,7 @@ const Dashboard = () => {
                     <div className="flex-shrink max-w-full w-full lg:w-1/3 xl:w-1/4">
                         <Stats />
                     </div>
-                    CHART
+                   <LineChart />
                 </div>
             </div>
         </>

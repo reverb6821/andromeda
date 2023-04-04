@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Outlet } from 'react-router-dom'
 import Sidebar from '../../components/partials/Sidebar'
 import Toolbar from '../../components/partials/Toolbar'
 
@@ -35,7 +36,10 @@ const Admin = () => {
         <div className='flex'>
             <Sidebar collapsed={collapsed} ref={sidebarRef} />
             <div className='w-full overflow-y-hidden'>
-                <Toolbar toggleCollapsed={toggleCollapsed} ref={toggleRef} />
+              <Toolbar toggleCollapsed={toggleCollapsed} ref={toggleRef} />
+              <main className='w-screen sm:w-auto py-6 px-6 sm:px-12'>
+                <Outlet/>
+              </main>
             </div>
         </div>
   )

@@ -24,7 +24,7 @@ const Dropdown = () => {
   }, [])
 
   return (
-        <div className='relative inline-block text-sm'>
+        <div className='relative inline-block text-sm z-50'>
             <button
                 type='button'
                 className='flex space-x-2 p-2 hover:opacity-75'

@@ -10,7 +10,7 @@ const Sidebar = forwardRef(({ collapsed }, sidebarRef) => (
     <motion.nav
     ref={sidebarRef}
     initial={false}
-    className={`w-64 min-h-screen p-6 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 ${
+    className={`w-64 min-h-screen p-6 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700  shadow-lg ${
       collapsed ? 'ml-0 sm:-ml-64' : '-ml-64 sm:ml-0'
     } ease-in-out`}>
          <div className='flex space-x-3 justify-center text-xl font-bold'>

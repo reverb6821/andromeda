@@ -3,6 +3,8 @@ import React, { forwardRef } from 'react'
 import { motion } from 'framer-motion'
 import Logo from '../../assets/logo.svg'
 
+import SidebarMenu from './SidebarMenu'
+
 // eslint-disable-next-line react/prop-types
 const Sidebar = forwardRef(({ collapsed }, sidebarRef) => (
     <motion.nav
@@ -16,7 +18,7 @@ const Sidebar = forwardRef(({ collapsed }, sidebarRef) => (
             <span>Andromeda</span>
          </div>
          <div className='mt-5 pt-5'>
-            TEST
+            <SidebarMenu />
          </div>
     </motion.nav>
 ))

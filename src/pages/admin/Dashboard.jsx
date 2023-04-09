@@ -3,7 +3,9 @@ import React from 'react'
 import Welcome from '../../components/dashboard/Welcome'
 import Stats from '../../components/dashboard/Stats'
 import LineChart from '../../components/dashboard/LineChart'
-
+import Latest from '../../components/dashboard/Latest'
+import Income from '../../components/dashboard/Income'
+import CalendarWidget from '../../components/dashboard/CalendarWidget'
 import { FcHome } from 'react-icons/fc'
 
 const Dashboard = () => {
@@ -26,6 +28,10 @@ const Dashboard = () => {
                         <Stats />
                     </div>
                    <LineChart />
+                </div>
+                <div className="grid grid-cols-12 gap-6 mt-10">
+                    <Income/>
+                    <CalendarWidget />
                 </div>
             </div>
         </>

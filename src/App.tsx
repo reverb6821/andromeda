@@ -1,22 +1,20 @@
-import { useState } from "react";
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0);
+import InputTextField from "@/components/Forms/InputTextField/InputTextField";
 
+const App: React.FC = () => {
   return (
-    <>
-      <div className="flex items-center justify-center h-screen">
-        <div className="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={() => setCount((count) => count + 1)}
-          >
-            count is {count}
-          </button>
-        </div>
+    <React.Fragment>
+      <div className="m-10 p-5">
+        <InputTextField
+          label="test"
+          type="text"
+          icon="ri-user-line"
+          helper="ciao"
+        />
       </div>
-    </>
+    </React.Fragment>
   );
-}
+};
 
 export default App;

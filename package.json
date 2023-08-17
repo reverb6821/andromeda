@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "prettier:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "prettier:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "prettier:format": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@types/node": "^20.5.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",

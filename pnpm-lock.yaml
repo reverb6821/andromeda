@@ -11,6 +11,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  remixicon:
+    specifier: ^3.5.0
+    version: 3.5.0
 
 devDependencies:
   "@commitlint/cli":
@@ -3854,6 +3857,13 @@ packages:
       indent-string: 4.0.0
       strip-indent: 3.0.0
     dev: true
+
+  /remixicon@3.5.0:
+    resolution:
+      {
+        integrity: sha512-wNzWGKf4frb3tEmgvP5shry0n1OdTjjEk9RHLuRuAhfA50bvEdpKH1XWNUYrHUSjAQQkkdyIm+lf4mOuysIKTQ==,
+      }
+    dev: false
 
   /require-directory@2.1.1:
     resolution:

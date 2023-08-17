@@ -1,4 +1,5 @@
 import React from "react";
+import classnames from "classnames";
 
 interface InputTextFieldProps {
   label: string;
@@ -24,31 +25,34 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
           <React.Fragment>
             <label
               htmlFor={label}
-              className="block mb-2 text-sm font-medium text-slate-900 dark:text-slate-200"
+              className="block mb-2 text-sm font-medium text-color"
             >
               {label}
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                <i className={`${icon} text-slate-900 dark:text-slate-200`} />
+                <i className={`${icon} text-color`} />
               </div>
               <input
                 type={type}
                 id={label}
-                className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-slate-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className={classnames(
+                  "input-style text-color text-sm block w-full pl-10 p-2.5 dark:placeholder-slate-400",
+                  {
+                    "disabled:": disabled === true,
+                  }
+                )}
                 placeholder={placeholder}
                 disabled={disabled}
               />
             </div>
-            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-              {helper}
-            </p>
+            <p className="mt-1 text-sm text-sub-color">{helper}</p>
           </React.Fragment>
         ) : (
           <React.Fragment>
             <label
               htmlFor={label}
-              className="block mb-2 text-sm font-medium text-slate-900 dark:text-slate-200"
+              className="block mb-2 text-sm font-medium text-color"
             >
               {label}
             </label>
@@ -56,13 +60,16 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
             <input
               type={type}
               id={label}
-              className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-slate-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className={classnames(
+                "input-style text-color text-sm block w-full p-2.5 dark:placeholder-slate-400",
+                {
+                  "disabled:": disabled === true,
+                }
+              )}
               placeholder={placeholder}
               disabled={disabled}
             />
-            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-              {helper}
-            </p>
+            <p className="mt-1 text-sm text-sub-color">{helper}</p>
           </React.Fragment>
         )}
       </div>

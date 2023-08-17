@@ -20,9 +20,9 @@ const Tooltip: React.FC<TooltipProps> = ({ tooltipText }) => {
         {tooltipStatus == 1 && (
           <div
             role="tooltip"
-            className="z-20 -mt-20 w-64 absolute transition duration-150 ease-in-out left-0 ml-8 shadow-lg bg-white p-4 rounded"
+            className="z-20 -mt-20 w-64 absolute transition duration-150 ease-in-out left-0 ml-8 shadow-lg bg-slate-200 p-4 rounded"
           >
-            <p className="text-xs leading-4 text-slate-600 pb-3">
+            <p className="text-sub-color text-xs leading-4 pb-3">
               {tooltipText}
             </p>
           </div>

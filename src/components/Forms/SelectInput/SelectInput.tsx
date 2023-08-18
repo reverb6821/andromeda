@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
 
 interface SelectInputProps {
@@ -19,6 +19,13 @@ const SelectInput: React.FC<SelectInputProps> = ({
   helper,
   options,
 }) => {
+  const [selected, setSelected] = useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    // console.log('Label 👉️', event.target.selectedOptions[0].label);
+    // console.log(event.target.value);
+    setSelected(event.target.value);
+  };
   return (
     <React.Fragment>
       <label
@@ -36,13 +43,15 @@ const SelectInput: React.FC<SelectInputProps> = ({
           }
         )}
         disabled={disabled}
+        value={selected}
+        onChange={handleChange}
       >
-        <option selected className="text-color">
+        <option value="" className="text-color">
           Choose...
         </option>
         {options && options.length > 1
-          ? options.map((option) => (
-              <option value={option.value} className="text-color">
+          ? options.map((option, index) => (
+              <option value={option.value} key={index} className="text-color">
                 {option.label}
               </option>
             ))

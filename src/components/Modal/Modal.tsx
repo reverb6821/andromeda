@@ -1,80 +1,80 @@
-import React from "react";
+/* eslint-disable react-refresh/only-export-components */
 import classnames from "classnames";
+import * as React from 'react'
+import { connect, ConnectedProps } from 'react-redux';
 
-import Loader from "../Partials/Loader";
-import DeleteModal from "./DeleteModal";
-import useModal from "./useModal";
+import { hideModal } from '@/store/actions/modal.actions';
+import { RootState } from "@/store/store";
 
-interface ModalProps {
-  deleteModal?: boolean;
-  primary?: boolean;
-  secondary?: boolean;
-  label: string;
-  isLoading?: boolean;
-  icon?: string;
-  disabled?: boolean;
-  customAction: () => void;
+import Button from '../button/Button';
+
+const mapStateToProps = (state: RootState) => ({
+  modal: state.modal.modal,
+});
+  
+const mapDispatchToProps = {
+  dispatchHideModal: hideModal,
+};
+  
+const connector = connect(mapStateToProps, mapDispatchToProps);
+  
+type ModalProps = object & ConnectedProps<typeof connector>;
+
+const Modal:React.FC<ModalProps> = ({ dispatchHideModal, modal })=>{
+
+    if (!modal) {
+      return null;
+    }
+  
+    const onCloseButtonClick = () => {
+      dispatchHideModal();
+    };
+
+    return(
+      <React.Fragment>
+        <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none dark:text-slate-100">
+          <div className={classnames("relative shadow-xl",
+          {
+            "w-full max-w-md max-h-full": modal.size === 'sm',
+            "w-full max-w-lg max-h-full": modal.size === 'md',
+            "w-full max-w-4xl max-h-full": modal.size === 'lg',
+          })}>
+            <div className="relative bg-slate-100 rounded-lg shadow dark:bg-slate-700">
+              <div className="flex items-center justify-between p-5 rounded-t">
+                  <h3 className="text-xl font-medium text-center text-slate-900 dark:text-slate-100">
+                    {modal.title}
+                  </h3>
+                  <button
+                    type="button"
+                    className="text-slate-400 bg-transparent hover:bg-slate-200 hover:text-slate-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-slate-600 dark:hover:text-slate-100"
+                    onClick={onCloseButtonClick}
+                    >
+                      <i className="ri-close-line text-color text-lg"></i>
+                  </button>
+              </div>
+              <div className="p-6 space-y-6">
+                {modal.children}
+              </div>
+              <div className="flex items-center justify-center p-6 space-x-2">
+                <Button
+                  label={modal.primaryBtnLabel}
+                  onBtnClick={modal.onBtnClickPrimary}
+                  btnStyle={modal.modalBtnStyle}
+                  type='button'
+                  />
+                <Button
+                  label={modal.btnSecondaryLabel}
+                  onBtnClick={onCloseButtonClick}
+                  type='button'
+                  btnStyle='secondary'
+                  />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="opacity-25 fixed inset-0 z-40 bg-slate-900"></div>
+      </React.Fragment>
+    )
 }
 
-const Modal: React.FC<ModalProps> = ({
-  primary,
-  secondary,
-  deleteModal,
-  label,
-  isLoading,
-  icon,
-  disabled,
-  customAction,
-}) => {
-  const { isOpen, toggle } = useModal();
-  return (
-    <React.Fragment>
-      <button
-        onClick={toggle}
-        disabled={disabled}
-        className={classnames(
-          "font-medium text-center inline-flex items-center rounded-md text-sm px-5 py-2.5 mr-2 mb-2 text-color",
-          {
-            "btn-primary ": primary === true,
-            "btn-secondary": secondary === true,
-            "btn-delete": deleteModal === true,
-            "disabled:": disabled === true,
-          }
-        )}
-      >
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <React.Fragment>
-            {icon ? (
-              <React.Fragment>
-                <i
-                  className={classnames(`${icon} mr-2`, {
-                    "text-color": primary === true,
-                    "text-sky-700": secondary === true,
-                  })}
-                />
-                {label}
-              </React.Fragment>
-            ) : (
-              `${label}`
-            )}
-          </React.Fragment>
-        )}
-      </button>
-      {/* {!deleteModal ? 
-        (
-        <ModalBody isOpen={isOpen} toggle={toggle} customAction={customAction} />
-        ) : (
-          <DeleteModal isOpen={isOpen} toggle={toggle} customAction={customAction} />
-      )} */}
-      <DeleteModal
-        isOpen={isOpen}
-        toggle={toggle}
-        customAction={customAction}
-      />
-    </React.Fragment>
-  );
-};
-
-export default Modal;
+export default connector(Modal);

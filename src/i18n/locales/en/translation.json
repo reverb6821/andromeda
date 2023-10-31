@@ -1,0 +1,11 @@
+{
+  "placeholder": "Last Friday I saw a spotted striped blue worm shake hands with a legless lizard.",
+  "date": "Today is {{date, DATE_HUGE}}",
+  "t.app.layout.partials.footer.date": "{{date, short}}",
+  "t.app.formfield.reactselect.placeholder": "Select...",
+  "t.app.formfield.reactselect.noOptions": "No Options Available",
+  "t.app.table.noOptions": "No data available",
+  "t.app.formfield.select.defaultLabel": "Choose..."
+
+
+}

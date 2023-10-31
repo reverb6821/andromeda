@@ -1,0 +1,10 @@
+{
+  "placeholder": "Venerdì scorso ho visto un verme blu striato macchiato stringere la mano a una lucertola senza gambe.",
+  "date": "Oggi è {{date, DATE_HUGE}}",
+  "t.app.layout.partials.footer.date": "{{date, short}}",
+  "t.app.formfield.reactselect.placeholder": "Seleziona...",
+  "t.app.formfield.reactselect.noOptions": "Nessuna opzione disponibile",
+  "t.app.table.noOptions": "Nessun dato disponibile",
+  "t.app.formfield.select.defaultLabel": "Scegli..."
+
+}

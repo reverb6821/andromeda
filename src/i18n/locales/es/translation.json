@@ -1,0 +1,10 @@
+{
+    "placeholder": "El viernes pasado vi un gusano azul a rayas manchado estrecharle la mano con un lagarto sin patas.",
+    "date": "Hoy es {{date, DATE_HUGE}}",
+    "t.app.layout.partials.footer.date": "{{date, short}}",
+    "t.app.formfield.reactselect.placeholder": "Seleccionar...",
+    "t.app.formfield.reactselect.noOptions": "No hay opciones disponibles",
+    "t.app.table.noOptions": "Datos no disponibles",
+    "t.app.formfield.select.defaultLabel": "Tu Eliges..."
+
+}

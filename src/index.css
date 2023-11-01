@@ -19,10 +19,28 @@
         @apply bg-slate-50 dark:bg-slate-700 border rounded-md border-slate-300 dark:border-slate-600 focus:ring-sky-500 focus:border-sky-500 dark:focus:ring-sky-500 dark:focus:border-sky-500
     }
     .btn-primary {
-        @apply bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 focus:outline-none
+        @apply bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 focus:outline-none rounded-md
+    }
+    .btn-primary--alert {
+        @apply bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 focus:outline-none rounded-md 
+    }
+    .btn-primary--warn {
+        @apply bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 focus:outline-none rounded-md
+    }
+    .btn-primary--success {
+        @apply bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300 focus:outline-none rounded-md
     }
     .btn-secondary {
-        @apply text-sky-700 dark:text-slate-300 hover:text-slate-200 border border-sky-700 dark:border-sky-900 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-700 
+        @apply text-sky-700 dark:text-slate-300 hover:text-slate-200 border border-sky-700 dark:border-sky-900 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-700 rounded-md 
+    }
+    .btn-secondary--alert {
+        @apply text-red-700 dark:text-slate-300 hover:text-slate-200 border border-red-700 dark:border-red-900 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-700 rounded-md 
+    }
+    .btn-secondary--warn {
+        @apply text-yellow-400 dark:text-slate-300 hover:text-slate-200 border border-yellow-400 dark:border-yellow-900 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-500 rounded-md 
+    }
+    .btn-secondary--success {
+        @apply text-emerald-700 dark:text-slate-300 hover:text-slate-200 border border-emerald-700 dark:border-emerald-900 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-700 rounded-md 
     }
     .btn-delete {
         @apply bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800

@@ -24,10 +24,13 @@ const Button: React.FC<ButtonProps> = ({
           "shadow-md justify-center font-medium text-center inline-flex items-center text-sm px-5 py-2.5 mr-2 mb-2 uppercase max-md:w-full max-md:text-center",
           {
             "btn-primary text-slate-200": btnStyle === 'primary',
+            "btn-primary--alert text-slate-200": btnStyle === 'primary--alert',
+            "btn-primary--warn text-slate-200": btnStyle === 'primary--warn',
+            "btn-primary--success text-slate-200": btnStyle === 'primary--success',
             "btn-secondary": btnStyle === 'secondary',
-            "text-slate-200 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300": btnStyle === 'alert',
-            "text-slate-200 bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300": btnStyle === 'warn',
-            "text-slate-200 bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300": btnStyle === 'success',
+            "btn-secondary--alert": btnStyle === 'secondary--alert',
+            "btn-secondary--warn": btnStyle === 'secondary--warn',
+            "btn-secondary--success": btnStyle === 'secondary--success',
             "disabled:": disabled === true,
           }
         )}

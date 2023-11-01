@@ -1,4 +1,6 @@
 import type { Preview } from "@storybook/react";
+import { withRouter } from 'storybook-addon-react-router-v6';
+
 import 'tailwindcss/tailwind.css'
 import '../src/index.css'
 import 'remixicon/fonts/remixicon.css'
@@ -14,6 +16,7 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [withRouter],
 };
 
 export default preview;

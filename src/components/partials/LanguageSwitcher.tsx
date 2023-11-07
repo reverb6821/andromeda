@@ -18,8 +18,6 @@ const LanguageSwitcher = () => {
   }
 
   const lngs: LanguagesType = {
-    // us: { label: 'us', value: 'en' },
-    // gb: { label: 'gb', value: 'en' },
     en: { label: 'en', value: 'de' },
     de: { label: 'de', value: 'de' },
     it: { label: 'it', value: 'it' },

@@ -1,18 +1,31 @@
-import { Formik, Form, FormikHelpers } from 'formik'
+import { Canvas, Meta } from "@storybook/blocks";
+import FormExample from "./FormExample.tsx";
+import * as FormExampleStory from "./FormExample.stories.tsx";
+
+<Meta of={FormExampleStory} title="FormExample" />
+
+# Modal
+
+Modal component with different props.
+
+<Canvas of={FormExampleStory.FormExampleLogin} />
+
+## Usage
+
+```ts
 import * as React from 'react'
-import * as Yup from 'yup'
 
+import Grid from '@/components/ui/Grid';
 import Button from '@/components/button/Button';
+import Checkbox from '@/components/form/CheckboxField/CheckboxField';
 import InputTextField from '@/components/form/InputTextField/InputTextField';
-import Grid from '@/components/ui/grid/Grid';
+import PasswordField from '@/components/form/InputTextField/PasswordField';
+import CustomSelect from '@/components/form/SelectField/CustomSelect';
+import Grid from '@/components/ui/Grid';
 
-import Checkbox from './CheckboxField/CheckboxField';
-import PasswordField from './PasswordTextField/PasswordField';
-import CustomSelect from './SelectField/CustomSelect';
 
-const FormExample: React.FC = () => {
-
-    interface Values {
+constLoginForm = () => {
+ interface Values {
         name: string;
         email: string;
         password: string;
@@ -68,8 +81,11 @@ const FormExample: React.FC = () => {
         .oneOf([true], 'You need to accept the terms and conditions'),
     });
 
-    return(
-        <React.Fragment>
+
+  return (
+     <React.Fragment>
+        <Grid direction='column' classNames='m-auto items-center justify-center dark:bg-slate-600'>
+
              <Formik
                 initialValues={initialState}
                 validationSchema={SignupSchema}
@@ -154,8 +170,10 @@ const FormExample: React.FC = () => {
                 )}
 
             </Formik>
-        </React.Fragment>
-    )
-}
-    
-export default FormExample
+        </Grid>
+    </React.Fragment>
+  );
+};
+
+export default LoginForm;
+```

@@ -1,0 +1,33 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Checkbox from './CheckboxField';
+import * as CheckboxStory from "./Checkbox.stories.tsx";
+
+<Meta of={CheckboxStory} title="Checkbox" />
+
+# Checkbox
+
+Checkbox component with different props.
+
+<Canvas of={CheckboxStory.CheckboxExample} />
+
+## Usage
+
+```ts
+import Checkbox from '@/components/form/CheckboxField/CheckboxField';
+
+const Checkbox = () => {
+  return (
+    <Checkbox
+        model='login.termsAndConditions'
+        tooltipText='Lorem Ipsum'
+    />
+  );
+};
+
+export default Checkbox;
+```
+#### Arguments
+- **label** - A string that represents the text content of the field.
+- **disabled** - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
+- **model** - A string that represents the field name inside formik form.
+- **value** - Represents the field value.

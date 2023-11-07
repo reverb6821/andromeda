@@ -1,5 +1,7 @@
 import type { Preview } from "@storybook/react";
 import { withRouter } from 'storybook-addon-react-router-v6';
+import withFormik from '@bbbtech/storybook-formik';
+import i18n from '../src/i18n/config';
 
 import 'tailwindcss/tailwind.css'
 import '../src/index.css'
@@ -15,8 +17,9 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    i18n,
   },
-  decorators: [withRouter],
+  decorators: [withRouter, withFormik]
 };
 
 export default preview;

@@ -1,16 +1,26 @@
+import type { Meta, StoryObj } from "@storybook/react";
 import { Formik, Form, FormikHelpers } from 'formik'
 import * as React from 'react'
 import * as Yup from 'yup'
 
 import Button from '@/components/button/Button';
+import Checkbox from '@/components/form/CheckboxField/CheckboxField';
+import FormExample from '@/components/form/FormExample';
 import InputTextField from '@/components/form/InputTextField/InputTextField';
+import PasswordField from '@/components/form/PasswordTextField/PasswordField';
+import CustomSelect from '@/components/form/SelectField/CustomSelect';
 import Grid from '@/components/ui/grid/Grid';
 
-import Checkbox from './CheckboxField/CheckboxField';
-import PasswordField from './PasswordTextField/PasswordField';
-import CustomSelect from './SelectField/CustomSelect';
+const meta: Meta<typeof FormExample> = {
+    title: "Andromeda/Forms/Form Example",
+    component: FormExample,
+  };
 
-const FormExample: React.FC = () => {
+export default meta;
+
+type Story = StoryObj<typeof FormExample>;
+
+export const FormExampleLogin: Story = () => {
 
     interface Values {
         name: string;
@@ -68,8 +78,10 @@ const FormExample: React.FC = () => {
         .oneOf([true], 'You need to accept the terms and conditions'),
     });
 
-    return(
-        <React.Fragment>
+    return (
+  <React.Fragment>
+        <Grid direction='column' classNames='m-auto items-center justify-center dark:bg-slate-600'>
+
              <Formik
                 initialValues={initialState}
                 validationSchema={SignupSchema}
@@ -111,13 +123,13 @@ const FormExample: React.FC = () => {
                         <Grid direction='row'>
                             <CustomSelect
                                 label='work'
-                                name="work"
+                                name="Work"
                                 isMulti={false}
                                 options={options}
                             />
                              <CustomSelect
                                 label='country'
-                                name="country"
+                                name="Country"
                                 isMulti={true}
                                 options={countryOptions}
                             />
@@ -128,7 +140,7 @@ const FormExample: React.FC = () => {
                                 label='Terms and conditions'
                                 disabled={false}
                                 value={false}
-                                tooltipText='ciao'
+                                tooltipText='Lorem Ipsum Dolor sit Amet'
                             />
                         </Grid>
                     </Grid>
@@ -154,8 +166,7 @@ const FormExample: React.FC = () => {
                 )}
 
             </Formik>
+            </Grid>
         </React.Fragment>
     )
 }
-    
-export default FormExample

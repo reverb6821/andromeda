@@ -8,10 +8,11 @@ export interface CustomSelectProps extends Props{
     label? : string,
     isMulti: boolean,
     disabled?: boolean,
+    help?: string,
     sendValue? : (event: React.MouseEvent) => void,
 }
 
-const CustomSelect:React.FC<CustomSelectProps> =({name,label , isMulti, disabled, sendValue , ...props})=> {
+const CustomSelect:React.FC<CustomSelectProps> =({name,label , isMulti, disabled, sendValue, help, ...props})=> {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const [field , meta , helper] = useField(name)
         const { t } = useTranslation();
@@ -27,14 +28,15 @@ const CustomSelect:React.FC<CustomSelectProps> =({name,label , isMulti, disabled
                     {...props}
                     unstyled
                     classNames={{
-                        control: () => 'py-2.5 px-2 w-60 max-md:w-full rounded-md block max-md:w-full shadow-md input-style text-sm rounded-md p-0.5  relative',
+                        control: () => 'py-2.5 px-2 w-60 rounded-md block shadow-md input-style text-sm rounded-md p-0.5  relative',
                         input: () => 'text-color block',
                         placeholder: () => 'placeholder-slate-400 dark:placeholder-slate-700',
                         singleValue: () => 'text-color',
-                        valueContainer: () => 'text-color w-full',
-                        multiValue: () => 'bg-slate-200 dark:bg-slate-600 ml-1 mb-0.5 p-1',
-                        multiValueLabel: () => 'bg-slate-200 dark:bg-slate-600 text-color text-sm rounded-none block mr-1',
-                        multiValueRemove: () => 'bg-slate-200 dark:bg-slate-600 text-color rounded-none hover:text-red-600',
+                        valueContainer: () => 'text-color w-60',
+                        multiValue: () => 'bg-transparent',
+                        multiValueLabel: () => 'bg-transparent',
+                        // multiValueRemove: () => 'bg-transparent text-color ml-0.2 mr-0.2 hover:text-red-600',
+                        multiValueRemove: () => 'hidden',
                         indicatorSeparator: () => 'hidden',
                         clearIndicator: () => 'text-color hover:text-red-600',
                         dropdownIndicator: () => 'text-color dark:hover:text-slate-400',
@@ -51,6 +53,7 @@ const CustomSelect:React.FC<CustomSelectProps> =({name,label , isMulti, disabled
                         sendValue && sendValue(e.value)
                     }}
                 />
+                <p className="mt-1 text-sm text-sub-color">{help}</p>
                 {meta.touched && meta.error &&
                 <div className='p-1 text-sm text-red-600 text font-semibold'>
                     {meta.error}

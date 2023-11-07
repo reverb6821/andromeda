@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Grid from '../ui/Grid';
+import Grid from '../ui/grid/Grid';
 
 const Table =()=>{
     const { t } = useTranslation();

@@ -3,7 +3,7 @@ import { Field, ErrorMessage } from 'formik';
 import * as React from "react";
 
 import Tooltip from '@/components/partials/tooltip/Tooltip';
-import Grid from '@/components/ui/Grid';
+import Grid from '@/components/ui/grid/Grid';
 import { CheckboxFieldProps } from '@/interfaces/components.properties';
 
 const Checkbox: React.FC<CheckboxFieldProps> = ({ label, disabled, model, tooltipText }) => {

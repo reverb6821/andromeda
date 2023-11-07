@@ -15,7 +15,7 @@ const mapDispatchToProps = {
   
   type AppProps = object & ConnectedProps<typeof connector>;
 
-  const ModalContainer = (props: AppProps) => {
+const ModalContainer = (props: AppProps) => {
     const { dispatchShowModal } = props;
 
   return (

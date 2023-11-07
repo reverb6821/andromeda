@@ -6,7 +6,7 @@ import store from '@/store/store.ts';
 import Header from "./Header.tsx";
 
 const meta: Meta<typeof Header> = {
-    title: "Header",
+    title: "Andromeda/UI/Header",
     component: Header,
     decorators: [
         (Story) => (

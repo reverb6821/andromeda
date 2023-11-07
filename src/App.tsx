@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from "react-redux";
 
 import ModalContainer from '@/components/modal/ModalContainer';
-import Grid from '@/components/ui/Grid';
+import Grid from '@/components/ui/grid/Grid';
 import { RootState } from "@/store/store";
 
 import FormExample from './components/form/FormExample';

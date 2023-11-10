@@ -49,7 +49,7 @@ const Modal:React.FC<ModalProps> = ({ dispatchHideModal, modal })=>{
                     className="text-slate-400 bg-transparent hover:bg-slate-200 hover:text-slate-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-slate-600 dark:hover:text-slate-100"
                     onClick={onCloseButtonClick}
                     >
-                      <i className="ri-close-line text-color text-lg"></i>
+                      <i className="ri-close-line text-color-primary text-lg"></i>
                   </button>
               </div>
               <div className="p-6 space-y-6">

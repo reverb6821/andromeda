@@ -10,7 +10,6 @@ const Badge: React.FC<BadgeProps> = ({
   return (
     <React.Fragment>
       <span
-        id="badge-dismiss-default"
         className={classnames(
           "text-sm font-medium mr-2 px-2.5 py-0.5 rounded",
           {

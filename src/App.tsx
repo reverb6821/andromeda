@@ -8,6 +8,7 @@ import { RootState } from "@/store/store";
 
 import FormExample from './components/form/FormExample';
 //  import Table from './components/table/Table';
+import Typography from './components/Typography/Typography';
 import Footer from './components/ui/footer/Footer';
 import Header from './components/ui/navigation/Header';
 
@@ -33,6 +34,7 @@ const App: React.FC  =()=> {
             </Grid>
           </Grid>
           <FormExample />
+          <Typography textSize='caption' textStyle='secondary' text={t('placeholder')}/> 
           {/* <Table /> */}
         </Grid>
         <Footer footerTitle='ciao' footerEl={headerEl} />

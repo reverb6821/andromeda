@@ -92,5 +92,20 @@ interface optionsProps {
 }
 
 export interface TooltipProps {
-    tooltipText?: string;
+    tooltipText?: string,
+}
+
+export interface TypographyProps {
+    textStyle: string,
+    textSize: string,
+    text: string | undefined, 
+    classNames?: string,
+}
+
+export interface ToggleFieldProps {
+    label: string,
+    disabled?: boolean,
+    model: string,
+    value: boolean,
+    tooltipText?: string,
 }

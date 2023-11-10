@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
               <React.Fragment>
                 <i
                   className={classnames(`${icon} mr-2`, {
-                    "text-color text-slate-200": btnStyle === 'primary' || btnStyle ==='alert' || btnStyle ==='warn' || btnStyle ==='success',
+                    "text-color-primary text-slate-200": btnStyle === 'primary' || btnStyle ==='alert' || btnStyle ==='warn' || btnStyle ==='success',
                     "text-sky-700 dark:text-slate-200": btnStyle === 'secondary',
                     
                   })}

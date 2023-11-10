@@ -70,7 +70,7 @@ const Table =()=>{
                             ))) : (
                                 <React.Fragment>
                                     <Grid direction='row' classNames='flex items-center justify-center m-auto p-5'>
-                                        <h6 className="text-lg font-bold text-color w-full ">
+                                        <h6 className="text-lg font-bold text-color-primary w-full ">
                                         {t("t.app.table.noOptions")}
                                         </h6>
                                     </Grid>

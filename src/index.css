@@ -9,10 +9,10 @@
     .disabled {
         @apply cursor-not-allowed
     }
-    .text-color {
-        @apply text-slate-700 dark:text-slate-200
+    .text-color-primary {
+        @apply  text-slate-900 dark:text-slate-100
     }
-    .text-sub-color {
+    .text-color-secondary {
         @apply text-slate-500 dark:text-slate-400
     }
     .input-style {

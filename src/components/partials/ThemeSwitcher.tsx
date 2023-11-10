@@ -13,7 +13,7 @@ const ThemeSwitcher = () => {
         <React.Fragment>
              <button 
                 type="button"
-                className="text-color bg-slate-300 dark:bg-slate-600 rounded-lg text-sm w-10 h-10 inline-flex justify-center items-center"
+                className="text-color-primary bg-slate-300 dark:bg-slate-600 rounded-lg text-sm w-10 h-10 inline-flex justify-center items-center"
                 onClick={toggleModeHandler}
             >
                 {isDarkMode === true ? (<i className="ri-moon-line"/>): (<i className="ri-sun-line"/>)}

@@ -30,15 +30,15 @@ const LanguageSwitcher = () => {
       <div className="inline-block relative"> 
           <button
             onClick={handleOpen}
-            className='bg-slate-300 dark:bg-slate-600 text-color font-semibold py-2 px-4 rounded inline-flex items-center'
+            className='bg-slate-300 dark:bg-slate-600 text-color-primary font-semibold py-2 px-4 rounded inline-flex items-center'
           >
             <span className="mr-1 uppercase">
               <i className={`fi fi-${i18n.resolvedLanguage === 'en' ? 'us' : i18n.resolvedLanguage}`}/> {i18n.language}
             </span>
-            <i className="ri-arrow-down-s-line text-color text-md"></i>
+            <i className="ri-arrow-down-s-line text-color-primary text-md"></i>
           </button>
           {open ? (
-              <ul className='bg-slate-300 dark:bg-slate-600 absolute text-color pt-1 rounded items-center shadow-lg p-2 mt-1 z-10'>
+              <ul className='bg-slate-300 dark:bg-slate-600 absolute text-color-primary pt-1 rounded items-center shadow-lg p-2 mt-1 z-10'>
                 {Object.keys(lngs).map((lng) => (
                   <li
                     key={lng}

@@ -9,6 +9,7 @@ import Grid from '@/components/ui/grid/Grid';
 import Checkbox from './CheckboxField/CheckboxField';
 import PasswordField from './PasswordTextField/PasswordField';
 import CustomSelect from './SelectField/CustomSelect';
+import ToggleField from './ToggleField/ToggleField';
 
 const FormExample: React.FC = () => {
 
@@ -129,6 +130,12 @@ const FormExample: React.FC = () => {
                                 disabled={false}
                                 value={false}
                                 tooltipText='ciao'
+                            />
+                             <ToggleField
+                                model='active'
+                                label='active'
+                                disabled={false}
+                                value={false}
                             />
                         </Grid>
                     </Grid>

@@ -23,7 +23,7 @@ const Checkbox: React.FC<CheckboxFieldProps> = ({ label, disabled, model, toolti
                     }
                 )}
                 />
-                <label htmlFor={label} className="ml-2 text-sm font-medium text-color">
+                <label htmlFor={label} className="ml-2 text-sm font-medium text-color-primary">
                     {label}
                 </label>
                 {tooltipText ? (

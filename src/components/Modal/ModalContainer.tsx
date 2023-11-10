@@ -23,7 +23,7 @@ const ModalContainer = (props: AppProps) => {
       <div className="App">
         <header className="App-header">
           <Button
-            btnStyle='success'
+            btnStyle='secondary--success'
             label='MODAL OPEN'
             type='button'
             onBtnClick={() => {

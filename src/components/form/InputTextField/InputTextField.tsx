@@ -2,6 +2,7 @@ import classnames from "classnames";
 import { Field, ErrorMessage } from 'formik';
 import * as React from "react";
 
+import Typography from '@/components/Typography/Typography';
 import { InputTextFieldProps } from '@/interfaces/components.properties';
 
 const InputTextField: React.FC<InputTextFieldProps> = ({
@@ -22,13 +23,13 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
           <React.Fragment>
             <label
               htmlFor={model}
-              className="block mb-2 text-sm font-medium text-color"
+              className="block mb-2 text-sm font-medium text-color-primary"
             >
               {label}
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                <i className={`${icon} text-color`} />
+                <i className={`${icon} text-color-primary`} />
               </div>
               <Field
                 name={model}
@@ -37,7 +38,7 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
                 onChange={onChange}
                 value={value}
                 className={classnames(
-                  "shadow-md w-full input-style text-color text-sm block pl-10 p-2.5 placeholder-slate-400 dark:placeholder-slate-700",
+                  "shadow-md w-full input-style text-color-primary text-sm block pl-10 p-2.5 placeholder-slate-400 dark:placeholder-slate-700",
                   {
                     "disabled:": disabled === true,
                   }
@@ -46,7 +47,7 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
                 disabled={disabled}
               />
             </div>
-            <p className="mt-1 text-sm text-sub-color">{helper}</p>
+            <Typography textSize='caption' textStyle='secondary' text={helper} classNames='mt-1 pl-2'/> 
             <ErrorMessage
                   name={model}
                   component="div"
@@ -57,7 +58,7 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
           <React.Fragment>
             <label
               htmlFor={model}
-              className="block mb-2 text-sm font-medium text-color"
+              className="block mb-2 text-sm font-medium text-color-primary"
             >
               {label}
             </label>
@@ -66,7 +67,7 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
               type={type}
               id={model}
               className={classnames(
-                "shadow-md w-full input-style text-color text-sm block p-2.5 placeholder-slate-400 dark:placeholder-slate-700",
+                "shadow-md w-full input-style text-color-primary text-sm block p-2.5 placeholder-slate-400 dark:placeholder-slate-700",
                 {
                   "disabled:": disabled === true,
                 }
@@ -74,7 +75,7 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
               placeholder={placeholder}
               disabled={disabled}
             />
-            <p className="mt-1 text-sm text-sub-color">{helper}</p>
+            <Typography textSize='caption' textStyle='secondary' text={helper} classNames='mt-1 pl-2'/> 
             <ErrorMessage
               name={model}
               component="div"

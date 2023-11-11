@@ -8,7 +8,7 @@ import store from '@/store/store.ts';
 import Modal from './Modal';
 import Button from '../button/Button';
 const meta: Meta<typeof Modal> = {
-    title: "Andromeda/Modal",
+    title: "Andromeda/UI/Modal",
     component: Modal,
     decorators: [
       (Story) => (

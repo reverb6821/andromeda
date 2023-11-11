@@ -13,7 +13,7 @@ import FigmaPlugin from "./assets/figma-plugin.png";
 import Testing from "./assets/testing.png";
 import Accessibility from "./assets/accessibility.png";
 import Theming from "./assets/theming.png";
-import AddonLibrary from "./assets/addon-library.png";
+import Andromeda from "./assets/andromeda.png";
 
 export const RightArrow = () => <svg 
     viewBox="0 0 14 14" 
@@ -31,7 +31,7 @@ export const RightArrow = () => <svg
   <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
 </svg>
 
-<Meta title="Configure your project" />
+<Meta title="Welcome to Andromeda" />
 
 <div className="sb-container">
   <div className='sb-section-title'>
@@ -39,46 +39,23 @@ export const RightArrow = () => <svg
 
     Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
   </div>
-  <div className="sb-section">
-    <div className="sb-section-item">
-      <img
-        src={Styling}
-        alt="A wall of logos representing different styling technologies"
-      />
-      <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
+
+  <div className='sb-addon'>
+    <div className='sb-addon-text'>
+      <h4>Addons</h4>
+      <p className="sb-section-item-paragraph">Integrate your tools with Storybook to connect workflows.</p>
       <a
-        href="https://storybook.js.org/docs/react/configure/styling-and-css"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
-      />
-      <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
-      <a
-        href="https://storybook.js.org/docs/react/writing-stories/decorators#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
-        `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
-        <a
-          href="https://storybook.js.org/docs/react/configure/images-and-assets"
+          href="https://storybook.js.org/integrations/"
           target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
+        >Discover all addons<RightArrow /></a>
+    </div>
+    <div className='sb-addon-img'>
+      <img src={Andromeda} alt="Andromeda Logo" />
     </div>
   </div>
+
 </div>
+
 <div className="sb-container">
   <div className='sb-section-title'>
     # Do more with Storybook
@@ -148,19 +125,7 @@ export const RightArrow = () => <svg
     </div>
   </div>
 </div>
-<div className='sb-addon'>
-  <div className='sb-addon-text'>
-    <h4>Addons</h4>
-    <p className="sb-section-item-paragraph">Integrate your tools with Storybook to connect workflows.</p>
-    <a
-        href="https://storybook.js.org/integrations/"
-        target="_blank"
-      >Discover all addons<RightArrow /></a>
-  </div>
-  <div className='sb-addon-img'>
-    <img src={AddonLibrary} alt="Integrate your tools with Storybook to connect workflows." />
-  </div>
-</div>
+
 
 <div className="sb-section sb-socials">
     <div className="sb-section-item">
@@ -304,9 +269,8 @@ export const RightArrow = () => <svg
 
   .sb-addon-img img {
     width: 650px;
-    transform: rotate(-15deg);
     margin-left: 40px;
-    margin-top: -72px;
+    margin-top: -48px;
     box-shadow: 0 0 1px rgba(255, 255, 255, 0);
     backface-visibility: hidden;
   }

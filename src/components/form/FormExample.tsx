@@ -21,6 +21,8 @@ const FormExample: React.FC = () => {
         country: string,
         work: string,
         termsAndConditions: boolean
+        active: boolean
+
       }
     const initialState={
         name: '',
@@ -30,6 +32,8 @@ const FormExample: React.FC = () => {
         country: '',
         work: '',
         termsAndConditions: false,
+        active: false,
+
     }
 
     const countryOptions = [
@@ -66,6 +70,8 @@ const FormExample: React.FC = () => {
         .oneOf([Yup.ref('password'), undefined], 'Must match "password" field value')
         .required('Please Enter your password'),
         termsAndConditions: Yup.bool()
+        .oneOf([true], 'You need to accept the terms and conditions'),
+        active: Yup.bool()
         .oneOf([true], 'You need to accept the terms and conditions'),
     });
 
@@ -136,6 +142,8 @@ const FormExample: React.FC = () => {
                                 label='active'
                                 disabled={false}
                                 value={false}
+                                tooltipText='ciao'
+
                             />
                         </Grid>
                     </Grid>

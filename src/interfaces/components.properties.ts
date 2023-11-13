@@ -109,3 +109,15 @@ export interface ToggleFieldProps {
     value: boolean,
     tooltipText?: string,
 }
+
+export interface TableProps {
+    head: string[],
+    body: string[],
+    action: TableActionProps,
+}
+
+export interface TableActionProps {
+    onClick: (event: React.MouseEvent) => void,
+    label: string,
+    icon: string,
+}

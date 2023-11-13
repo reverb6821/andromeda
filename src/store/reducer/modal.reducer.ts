@@ -1,4 +1,4 @@
-import ModalProps from '@/interfaces/modal.properties';
+import { ModalProps } from '@/interfaces/components.properties';
 
 import { ModalAction, ModalActionTypes } from '../actions/modal.actions';
 

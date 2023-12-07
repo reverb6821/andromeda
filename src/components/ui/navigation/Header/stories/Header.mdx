@@ -1,0 +1,27 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Header from "../Header.tsx";
+import * as HeaderStory from "./Header.stories.tsx"
+
+<Meta of={HeaderStory} title="Header" />
+
+# Header
+
+Header component with different props.
+
+#### Header
+
+<Canvas of={HeaderStory.HeaderExample} />
+
+## Usage
+
+```ts
+import Header from '@/components/ui/navigation/Header';
+
+const Header = () => {
+  return (
+        <Header headerTitle='Andromeda' headerEl={headerEl}/>
+  );
+};
+
+export default Header;
+```

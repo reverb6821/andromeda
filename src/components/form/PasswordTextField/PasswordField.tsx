@@ -2,7 +2,7 @@ import classnames from "classnames";
 import { Field, ErrorMessage } from 'formik';
 import * as React from "react";
 
-import Typography from '@/components/Typography/Typography';
+import Typography from '@/components/ui/Typography/Typography';
 import { PasswordFieldProps } from '@/interfaces/components.properties';
 
 const PasswordField: React.FC<PasswordFieldProps> = ({

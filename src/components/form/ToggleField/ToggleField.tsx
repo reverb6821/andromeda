@@ -2,7 +2,7 @@ import classnames from "classnames";
 import { Field, ErrorMessage } from 'formik';
 import * as React from "react";
 
-import Grid from '@/components/ui/grid/Grid';
+import Grid from '@/components/ui/Grid/Grid';
 import { ToggleFieldProps } from '@/interfaces/components.properties';
 
 const ToggleField: React.FC<ToggleFieldProps> = ({ label, disabled, model }) => {

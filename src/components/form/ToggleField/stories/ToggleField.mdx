@@ -1,0 +1,32 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import ToggleField from '../ToggleField';
+import * as ToggleFieldStory from "./ToggleField.stories.tsx";
+
+<Meta of={ToggleFieldStory} title="ToggleField" />
+
+# ToggleField
+
+ToggleField component with different props.
+
+<Canvas of={ToggleFieldStory.ToggleFieldExample} />
+
+## Usage
+
+```ts
+import ToggleField from '@/components/form/ToggleField/ToggleField';
+
+const ToggleField = () => {
+  return (
+    <ToggleField
+        model='login.active'
+    />
+  );
+};
+
+export default ToggleField;
+```
+#### Arguments
+- **label** - A string that represents the text content of the field.
+- **disabled** - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
+- **model** - A string that represents the field name inside formik form.
+- **value** - Represents the field value.

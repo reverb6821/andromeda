@@ -1,0 +1,41 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Typography from '../Typography';
+import * as TypographyStory from './Typography.stories.tsx'
+
+<Meta of={TypographyStory} title="Typography" />
+
+# Typography
+
+Typography component with different props.
+
+<Canvas of={TypographyStory.Regular} />
+
+## Usage
+
+```ts
+import Typography from '@/components/ui/Typography/Typography';
+
+
+const Typography = () => {
+  return (
+    <Typography
+    textSize='caption'
+    textStyle='secondary'
+    text='Lorem Ipsum Dolor sit amet'
+    /> 
+  );
+};
+
+export default Typography;
+```
+#### Arguments
+- **textSize** - A string that represents the text size of field. It accept:
+    - caption
+    - regular
+    - xl
+    - 2xl
+    - 3xl
+- **textStyle** - A string that represents the text size of field. It accept:
+    - primary
+    - secondary
+- **text** - A string that represents the text content of the field.

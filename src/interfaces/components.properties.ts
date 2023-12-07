@@ -112,8 +112,8 @@ export interface ToggleFieldProps {
 
 export interface TableProps {
     head: string[],
-    body: string[],
-    action: TableActionProps,
+    body?: string[] | undefined | object[],
+    action?: TableActionProps,
 }
 
 export interface TableActionProps {

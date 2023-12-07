@@ -3,7 +3,7 @@ import * as React from "react";
 import { useTranslation } from 'react-i18next';
 import Select, {Props} from "react-select";
 
-import Typography from '@/components/Typography/Typography';
+import Typography from '@/components/ui/Typography/Typography';
 
 export interface CustomSelectProps extends Props{
     name : string,

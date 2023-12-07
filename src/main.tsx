@@ -10,6 +10,7 @@ import '@/i18n/config.ts'
 import './index.css'
 import 'remixicon/fonts/remixicon.css'
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

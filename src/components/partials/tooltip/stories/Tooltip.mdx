@@ -1,0 +1,30 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Tooltip from "../Tooltip.tsx";
+import * as TooltipStory from "./Tooltip.stories.tsx";
+
+<Meta of={TooltipStory} title="Tooltip" />
+
+# Tooltip
+
+Tooltip component with different props.
+
+<Canvas of={TooltipStory.TooltipExample} />
+
+## Usage
+
+```ts
+import Tooltip from '@/components/Tooltip/Tooltip.tsx;
+
+const Tooltip = () => {
+  return (
+    <Tooltip tooltipText='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' />
+  );
+};
+
+export default Tooltip;
+```
+
+
+
+#### Arguments
+- **tooltipText** - A string that represents the text content of the Tooltip.

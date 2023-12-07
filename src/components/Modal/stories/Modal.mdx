@@ -1,0 +1,78 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Modal from "../Modal.tsx";
+import * as ModalStory from "./Modal.stories.tsx";
+
+<Meta of={ModalStory} title="Modal" />
+
+# Modal
+
+Modal component with different props.
+
+<Canvas of={ModalStory.ModalBtn} />
+
+## Usage
+
+```ts
+import * as React from 'react'
+import { connect, ConnectedProps } from 'react-redux';
+
+import { showModal } from '@/store/actions/modal.actions';
+
+import Modal from '@/components/modal/Modal.tsx'
+import Button from '@/components/button/Button.tsx';
+
+const mapDispatchToProps = {
+    dispatchShowModal: showModal,
+  };
+  
+const connector = connect(undefined, mapDispatchToProps);
+  
+type ModalProps = object & ConnectedProps<typeof connector>;
+
+const ModalContainer = (props: ModalProps) => {
+  const { dispatchShowModal } = props;
+
+  return (
+      <Button
+        btnStyle='primary'
+        label='Modal Example'
+        type='button'
+        onBtnClick={() => {
+            dispatchShowModal({
+                size: 'sm',
+                title: 'New Modal Example',
+                children: <p>Children Example</p>,
+                primaryBtnLabel: 'Confirm',
+                modalBtnStyle: 'primary',
+                onBtnClickPrimary: () => {
+                  alert('You clicked that button!');
+                },
+                btnSecondaryLabel: 'Cancel',
+            });
+        }}
+      />
+  );
+};
+
+export default ModalContainer;
+```
+
+#### Arguments
+- **title** - A string that represents the text content of the modal.
+- **size** -  A string indicating the dimension of the modal. The value accepted are:
+  - "sm",
+  - "md",
+  - "lg",
+- **children** - children element to pass node component
+- **modalBtnStyle** - A string indicating whether the button should have a primary styling or not. Typically, a primary button stands out as the main action in a user interface. It accept one of following value: one of the possible values:
+  - "primary",
+  - "primary--alert",
+  - "primary--warn",
+  - "primary--success".
+  - "secondary",
+  - "secondary--alert",
+  - "secondary--warn",
+  - "secondary--success",
+- **primaryBtnLabel** - A string that represents the text content of the button.
+- **onBtnClickPrimary** _`() => void`_ - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element.
+- **btnSecondaryLabel** - A string that represents the text content of the button.

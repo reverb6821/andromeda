@@ -7,6 +7,7 @@ import Grid from '@/components/ui/Grid/Grid';
 import { RootState } from "@/store/store";
 
 import FormExample from './components/form/FormExample';
+import Badge from './components/partials/badge/Badge';
 import Table from './components/Table/Table';
 import Footer from './components/ui/Footer/Footer';
 import Header from './components/ui/navigation/Header/Header';
@@ -18,22 +19,21 @@ const App: React.FC  =()=> {
   const isDarkMode = useSelector((content: RootState) => content.theme.isDarkMode) || null;
   const  headerEl = [{label: 'uno', route: 'uno'},{label: 'due', route: 'due'}]
 
-  const tabledata = /*TABLE_ROWS && TABLE_ROWS.length > 1 ?*/ TABLE_ROWS.map((el)=>{
+  const tabledata = TABLE_ROWS.map((el)=>{
     const obj = {
-      id: <p>{el.id}</p>,
+      id: el.id,
       name: el.name,
       email: el.email,
-      date: el.date,
-      status: el.status
+      title: el.title,
+      department: el.department,
+      status:<Badge label={el.status} badgeStyle={el.status === 'Active' ? 'primary--success' : 'primary--alert'}/>,
+      role: el.role,
+      age: el.age,
+      imgUrl: <img className="w-10 h-10 rounded-full" src={el.imgUrl} alt="Jese image" />
     }
     return Object.values(obj)
   })
-  // ) : null;
-// console.log(tabledata)
-// const tabledata = TABLE_ROWS.map((el) => {
-//   el.toString()
-// })
-console.log('object', tabledata)
+
   return (
     <React.Fragment>
       <div className={`App ${isDarkMode ? "dark" : ""}`}>
@@ -49,7 +49,12 @@ console.log('object', tabledata)
           <Typography textSize='caption' textStyle='secondary' text={t('placeholder')}/> 
           <Typography textSize='caption' textStyle='secondary' text={t('date', { date: new Date() })}/> 
 
-          <Table head={TABLE_HEAD} body={tabledata}  />
+          <Table
+          head={TABLE_HEAD}
+          body={tabledata}
+          onEdit={()=>{console.log('edit')}}
+          // onDelete={()=>{console.log('delete')}}
+          />
         </Grid>
         <Footer footerTitle='ciao' footerEl={headerEl} />
     </div>

@@ -1,9 +1,19 @@
 {
     "placeholder": "Vendredi dernier, j'ai vu un ver bleu rayé tacheté serrer la main d'un lézard sans pattes.",
     "date": "Aujourd'hui c'est {{date, DATE_HUGE}}",
+
+    "t.app.generic.confirm" : "Confirmer",
+    "t.app.generic.cancel" : "Annuler",
+
     "t.app.layout.partials.footer.date": "{{date, short}}",
+
     "t.app.formfield.reactselect.placeholder": "Sélectionner...",
     "t.app.formfield.reactselect.noOptions": "Aucune option disponible",
+    
     "t.app.table.noOptions": "Pas de données disponibles",
-    "t.app.formfield.select.defaultLabel": "Tu Choisis..."
+    "t.app.table.pagination.previous": "Précédente",
+    "t.app.table.pagination.next": "Suivant",
+    "t.app.table.delete.alert": "Cette action est irréversible. Êtes-vous sur de vouloir continuer?",
+    "t.app.table.delete.title": "Confirmer l'Action"
+
 }

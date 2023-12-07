@@ -113,11 +113,16 @@ export interface ToggleFieldProps {
 export interface TableProps {
     head: string[],
     body?: string[] | undefined | object[],
-    action?: TableActionProps,
+    onEdit?: (event: React.MouseEvent) => void
+    onDelete?: (event: React.MouseEvent) => void
 }
 
-export interface TableActionProps {
-    onClick: (event: React.MouseEvent) => void,
-    label: string,
-    icon: string,
+export interface TableHeaderProps {
+    head: string[],
+}
+
+export interface TableBodyProps {
+    body: string[] | object[] | undefined,
+    onEdit?: (event: React.MouseEvent) => void
+    onDelete?: (event: React.MouseEvent) => void
 }

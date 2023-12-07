@@ -1,9 +1,18 @@
 {
     "placeholder": "Letzten Freitag sah ich einen gefleckten gestreiften blauen Wurm, der einer beinlosen Eidechse die Hand schüttelte.",
     "date": "Heute ist {{date, DATE_HUGE}}",
+
+    "t.app.generic.confirm" : "Bestätigen",
+    "t.app.generic.cancel" : "Stornieren",
+
     "t.app.layout.partials.footer.date": "{{date, short}}",
+
     "t.app.formfield.reactselect.placeholder": "Wählen....",
     "t.app.formfield.reactselect.noOptions": "Keine Optionen verfügbar",
+
     "t.app.table.noOptions": "Keine Daten verfügbar",
-    "t.app.formfield.select.defaultLabel": "Du Wählst..."
+    "t.app.table.pagination.previous": "Vorherige",
+    "t.app.table.pagination.next": "Nächste",
+    "t.app.table.delete.alert": "Diese Aktion ist irreversibel. Sind Sie sicher, dass Sie fortfahren möchten?",
+    "t.app.table.delete.title": "Aktion Bestätigen"
 }

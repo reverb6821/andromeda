@@ -114,6 +114,7 @@ export interface TableProps {
     head: string[],
     body: string[] | undefined | object[],
     rowsPerPage: number,
+    filterValue?: string,
     onEdit?: (event: React.MouseEvent) => void
     onDelete?: (event: React.MouseEvent) => void
 }

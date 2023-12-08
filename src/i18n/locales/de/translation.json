@@ -14,5 +14,7 @@
     "t.app.table.pagination.previous": "Vorherige",
     "t.app.table.pagination.next": "Nächste",
     "t.app.table.delete.alert": "Diese Aktion ist irreversibel. Sind Sie sicher, dass Sie fortfahren möchten?",
-    "t.app.table.delete.title": "Aktion Bestätigen"
+    "t.app.table.delete.title": "Aktion Bestätigen",
+    "t.app.table.button.export": "Export"
+
 }

@@ -112,7 +112,8 @@ export interface ToggleFieldProps {
 
 export interface TableProps {
     head: string[],
-    body?: string[] | undefined | object[],
+    body: string[] | undefined | object[],
+    rowsPerPage: number,
     onEdit?: (event: React.MouseEvent) => void
     onDelete?: (event: React.MouseEvent) => void
 }
@@ -126,3 +127,10 @@ export interface TableBodyProps {
     onEdit?: (event: React.MouseEvent) => void
     onDelete?: (event: React.MouseEvent) => void
 }
+
+export interface TablePaginationProps {
+    currentPage: number;
+    totalCount: number;
+    pageSize: number;
+    onPageChange: (page: number) => void;
+  }

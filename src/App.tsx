@@ -52,8 +52,9 @@ const App: React.FC  =()=> {
           <Table
           head={TABLE_HEAD}
           body={tabledata}
+          rowsPerPage={5}
           onEdit={()=>{console.log('edit')}}
-          // onDelete={()=>{console.log('delete')}}
+          onDelete={()=>{console.log('delete')}}
           />
         </Grid>
         <Footer footerTitle='ciao' footerEl={headerEl} />

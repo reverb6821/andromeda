@@ -38,7 +38,7 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
                 onChange={onChange}
                 value={value}
                 className={classnames(
-                  "shadow-md w-full input-style text-color-primary text-sm block pl-10 p-2.5 placeholder-slate-400 dark:placeholder-slate-700",
+                  "shadow-md w-full input-style text-color-primary text-sm block pl-10 p-2.5 placeholder-slate-400 dark:placeholder-slate-200",
                   {
                     "disabled:": disabled === true,
                   }
@@ -67,7 +67,7 @@ const InputTextField: React.FC<InputTextFieldProps> = ({
               type={type}
               id={model}
               className={classnames(
-                "shadow-md w-full input-style text-color-primary text-sm block p-2.5 placeholder-slate-400 dark:placeholder-slate-700",
+                "shadow-md w-full input-style text-color-primary text-sm block p-2.5 placeholder-slate-400 dark:placeholder-slate-200",
                 {
                   "disabled:": disabled === true,
                 }

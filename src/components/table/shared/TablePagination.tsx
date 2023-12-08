@@ -19,10 +19,10 @@ const pages = Math.ceil(totalCount / pageSize);
 return(
     <React.Fragment>
         <div className="flex mt-2">
-            <button onClick={handlePrev} disabled={currentPage === 1} className="flex items-center justify-center px-3 h-8 text-sm font-medium text-color-primary bg-white border border-gray-300 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700">
+            <button onClick={handlePrev} disabled={currentPage === 1} className="flex items-center justify-center px-3 h-8 text-sm font-medium text-color-primary rounded-md   color-primary">
                 {t("t.app.table.pagination.previous")}
             </button>
-            <button onClick={handleNext} disabled={currentPage === pages} className="flex items-center justify-center px-3 h-8 ms-3 text-sm font-medium text-color-primary bg-white border border-gray-300 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700">
+            <button onClick={handleNext} disabled={currentPage === pages} className="flex items-center justify-center px-3 h-8 ms-3 text-sm font-medium text-color-primary rounded-md   color-primary">
                 {t("t.app.table.pagination.next")}
             </button>
         </div>

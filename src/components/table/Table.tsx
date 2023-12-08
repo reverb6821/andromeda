@@ -30,7 +30,7 @@ const Table: React.FC<TableProps> = ({ head, body, rowsPerPage }) => {
         <React.Fragment>
             {body && body.length > 1 ? (
                 <React.Fragment>
-                    <div className="relative overflow-x-auto ">
+                    <div className="relative">
                         <div className="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
                             <TableSearch />
                             <Button
@@ -41,15 +41,17 @@ const Table: React.FC<TableProps> = ({ head, body, rowsPerPage }) => {
                             icon="ri-download-2-line"
                             />
                         </div>
-                        <table className="w-full text-sm text-left rtl:text-right shadow-lg sm:rounded-lg">
-                            <TableHeader head={head} />
-                            <TableBody body={currentData} />
-                        </table>
+                        <div className='overflow-x-auto shadow-lg sm:rounded-lg'>
+                            <table className="w-full text-sm text-left rtl:text-right">
+                                <TableHeader head={head} />
+                                <TableBody body={currentData} />
+                            </table>
+                        </div>
                     </div>
-                    <div className="relative overflow-x-auto w-full pt-4">
+                    <div className="w-full pt-4">
                         <Grid direction='column' classNames='sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4'>
                             <select
-                                className='input-style text-color-primary placeholder-slate-400 dark:placeholder-slate-700 text-sm rounded-lg block px-3 py-1.5 dark'
+                                className='input-style text-color-primary color-primary placeholder-slate-400 dark:placeholder-slate-700 text-sm rounded-lg block px-3 py-1.5 dark'
                                 value={currentRowsPerPage}
                                 onChange={(e) => setCurrentRowsPerPage(Number(e.target.value))}
                                 >

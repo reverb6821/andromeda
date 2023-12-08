@@ -45,9 +45,7 @@ const App: React.FC  =()=> {
               <ModalContainer />
             </Grid>
           </Grid>
-          <FormExample />
-          <Typography textSize='caption' textStyle='secondary' text={t('placeholder')}/> 
-          <Typography textSize='caption' textStyle='secondary' text={t('date', { date: new Date() })}/> 
+          {/* <FormExample /> */}
 
           <Table
           head={TABLE_HEAD}
@@ -57,6 +55,8 @@ const App: React.FC  =()=> {
           onDelete={()=>{console.log('delete')}}
           />
         </Grid>
+        <Typography textSize='caption' textStyle='secondary' text={t('placeholder')}/> 
+        <Typography textSize='caption' textStyle='secondary' text={t('date', { date: new Date() })}/> 
         <Footer footerTitle='ciao' footerEl={headerEl} />
     </div>
     </React.Fragment>

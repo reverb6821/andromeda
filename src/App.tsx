@@ -6,7 +6,7 @@ import ModalContainer from '@/components/modal/ModalContainer';
 import Grid from '@/components/ui/Grid/Grid';
 import { RootState } from "@/store/store";
 
-import FormExample from './components/form/FormExample';
+// import FormExample from './components/form/FormExample';
 import Badge from './components/partials/badge/Badge';
 import Table from './components/Table/Table';
 import Footer from './components/ui/Footer/Footer';
@@ -52,7 +52,7 @@ const App: React.FC  =()=> {
           body={tabledata}
           rowsPerPage={5}
           onEdit={()=>{console.log('edit')}}
-          onDelete={()=>{console.log('delete')}}
+          onDelete={()=>{alert('delete')}}
           />
         </Grid>
         <Typography textSize='caption' textStyle='secondary' text={t('placeholder')}/> 

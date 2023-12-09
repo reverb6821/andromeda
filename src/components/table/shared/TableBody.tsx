@@ -5,17 +5,24 @@ import { connect, ConnectedProps } from 'react-redux';
 import Modal from '@/components/modal/Modal'
 import Typography from '@/components/ui/Typography/Typography';
 import { TableBodyProps } from '@/interfaces/components.properties';
-import { showModal } from '@/store/actions/modal.actions';
+import { showModal, hideModal } from '@/store/actions/modal.actions';
 
 const mapDispatchToProps = {
     dispatchShowModal: showModal,
+    dispatchHideModal: hideModal,
+
 };
 const connector = connect(undefined, mapDispatchToProps);
 
 type AppProps = object & ConnectedProps<typeof connector>;
 
-const TableBody: React.FC<TableBodyProps & AppProps> = ({ body, onEdit, onDelete, dispatchShowModal }) => {
+const TableBody: React.FC<TableBodyProps & AppProps> = ({ body, onEdit, onDelete, dispatchShowModal, dispatchHideModal }) => {
     const { t } = useTranslation();
+
+    const onCloseButtonClick = () => {
+        dispatchHideModal();
+      };
+
     return (
         <React.Fragment>
             <tbody>
@@ -26,11 +33,11 @@ const TableBody: React.FC<TableBodyProps & AppProps> = ({ body, onEdit, onDelete
                                 {item}
                             </th>
                         )}
-                        <td className="flex items-center px-6 py-4">
+                        {onDelete || onEdit ? (
+                            <td className="flex items-center px-6 py-4">
                             <button type='button' onClick={onEdit} className="font-medium text-blue-600 hover:text-blue-800">
                                 <i className="ri-edit-2-line"></i>
                             </button>
-
                             <button
                                 type='button'
                                 className="font-medium text-red-600 hover:text-red-800 ms-3"
@@ -51,7 +58,8 @@ const TableBody: React.FC<TableBodyProps & AppProps> = ({ body, onEdit, onDelete
                                     primaryBtnLabel: t('t.app.generic.confirm'),
                                     modalBtnStyle: 'primary--alert',
                                     onBtnClickPrimary: () => {
-                                        {onDelete}
+                                        {onDelete()}
+                                        onCloseButtonClick()
                                     },
                                     btnSecondaryLabel: t('t.app.generic.cancel'),
                                 })}}
@@ -59,6 +67,8 @@ const TableBody: React.FC<TableBodyProps & AppProps> = ({ body, onEdit, onDelete
                                 <i className="ri-delete-bin-5-line"></i>
                             </button>
                         </td>
+                        ) : null}
+                        
                     </tr>
                 ) : null}
             </tbody>

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { TableHeaderProps } from '@/interfaces/components.properties';
 
-const TableHeader: React.FC<TableHeaderProps> =({head})=>{
+const TableHeader: React.FC<TableHeaderProps> =({head, onEdit, onDelete})=>{
 
     return(
         <React.Fragment>
@@ -13,9 +13,11 @@ const TableHeader: React.FC<TableHeaderProps> =({head})=>{
                             {el}
                         </th>
                     ) : ''}
+                    {onDelete || onEdit ? (
                     <th scope="col" className="px-6 py-3">
                         Actions
                     </th>
+                    ) : null}
                 </tr>
             </thead>
         </React.Fragment>

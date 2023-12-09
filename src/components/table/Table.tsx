@@ -11,7 +11,7 @@ import TableHeader from './shared/TableHeader';
 import TablePagination from './shared/TablePagination';
 import TableSearch from './shared/TableSearch';
 
-const Table: React.FC<TableProps> = ({ head, body, rowsPerPage }) => {
+const Table: React.FC<TableProps> = ({ head, body, rowsPerPage, onDelete, onEdit }) => {
     const [currentPage, setCurrentPage] = React.useState(1);
     const [currentRowsPerPage, setCurrentRowsPerPage] = React.useState(rowsPerPage);
 
@@ -43,12 +43,10 @@ const Table: React.FC<TableProps> = ({ head, body, rowsPerPage }) => {
                         </div>
                         <div className='overflow-x-auto shadow-lg sm:rounded-lg'>
                             <table className="w-full text-sm text-left rtl:text-right">
-                                <TableHeader head={head} />
-                                <TableBody body={currentData} />
+                                <TableHeader head={head} onDelete={onDelete} onEdit={onEdit}/>
+                                <TableBody body={currentData} onDelete={onDelete} onEdit={onEdit}/>
                             </table>
                         </div>
-                    </div>
-                    <div className="w-full pt-4">
                         <Grid direction='column' classNames='sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4'>
                             <select
                                 className='input-style text-color-primary color-primary placeholder-slate-400 dark:placeholder-slate-700 text-sm rounded-lg block px-3 py-1.5 dark'

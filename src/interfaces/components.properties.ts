@@ -115,18 +115,20 @@ export interface TableProps {
     body: string[] | undefined | object[],
     rowsPerPage: number,
     filterValue?: string,
-    onEdit?: (event: React.MouseEvent) => void
-    onDelete?: (event: React.MouseEvent) => void
+    onEdit?: () => void
+    onDelete?: () => void
 }
 
 export interface TableHeaderProps {
     head: string[],
+    onEdit?: () => void
+    onDelete?: () => void
 }
 
 export interface TableBodyProps {
     body: string[] | object[] | undefined,
-    onEdit?: (event: React.MouseEvent) => void
-    onDelete?: (event: React.MouseEvent) => void
+    onEdit?: () => void
+    onDelete?: () => void
 }
 
 export interface TablePaginationProps {

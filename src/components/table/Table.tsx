@@ -1,50 +1,48 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Button from '@/components/button/Button';
 import Grid from '@/components/ui/Grid/Grid';
 import Typography from '@/components/ui/Typography/Typography';
 import { TableProps } from '@/interfaces/components.properties';
 
+import ExportButton from './shared/ExportButton';
 import TableBody from './shared/TableBody';
 import TableHeader from './shared/TableHeader';
 import TablePagination from './shared/TablePagination';
 import TableSearch from './shared/TableSearch';
 
-const Table: React.FC<TableProps> = ({ head, body, rowsPerPage, onDelete, onEdit }) => {
+const Table: React.FC<TableProps> = ({ columns, rows, onDelete, onEdit, model }) => {
     const [currentPage, setCurrentPage] = React.useState(1);
-    const [currentRowsPerPage, setCurrentRowsPerPage] = React.useState(rowsPerPage);
-
-    // const [filter, setFilter] = React.useState();
+    const [currentRowsPerPage, setCurrentRowsPerPage] = React.useState(15);
     const { t } = useTranslation();
 
     const currentData = React.useMemo(() => {
         const firstPageIndex = (currentPage - 1) * currentRowsPerPage;
         const lastPageIndex = firstPageIndex + currentRowsPerPage;
-        return (body || []).slice(firstPageIndex, lastPageIndex);
-    }, [currentPage, currentRowsPerPage, body]);
+        return (rows || []).slice(firstPageIndex, lastPageIndex);
+    }, [currentPage, currentRowsPerPage, rows]);
 
-    const pageOptions = Array.from({length: Math.ceil((body || []).length / 5)}, (_, i) => (i * 4) + 1)
+    const pageOptions = [15, 25, 50, 100]
 
     return (
         <React.Fragment>
-            {body && body.length > 1 ? (
+            {rows && rows.length > 1 ? (
                 <React.Fragment>
                     <div className="relative">
                         <div className="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
                             <TableSearch />
-                            <Button
-                            onBtnClick={() => {}}
-                            btnStyle='primary--success'
-                            type="button"
-                            label={t('t.app.table.button.export')}
-                            icon="ri-download-2-line"
-                            />
+                            {model ? (
+                               <ExportButton
+                                data={rows}
+                                headers={columns}
+                                model={model}
+                                />
+                            ) : null}
                         </div>
                         <div className='overflow-x-auto shadow-lg sm:rounded-lg'>
                             <table className="w-full text-sm text-left rtl:text-right">
-                                <TableHeader head={head} onDelete={onDelete} onEdit={onEdit}/>
-                                <TableBody body={currentData} onDelete={onDelete} onEdit={onEdit}/>
+                                <TableHeader columns={columns} onDelete={onDelete} onEdit={onEdit}/>
+                                <TableBody rows={currentData} onDelete={onDelete} onEdit={onEdit}/>
                             </table>
                         </div>
                         <Grid direction='column' classNames='sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4'>
@@ -61,8 +59,8 @@ const Table: React.FC<TableProps> = ({ head, body, rowsPerPage, onDelete, onEdit
                             </select>
                             <TablePagination
                                 currentPage={currentPage}
-                                totalCount={body.length}
-                                pageSize={rowsPerPage}
+                                totalCount={rows.length}
+                                pageSize={15}
                                 onPageChange={setCurrentPage}
                             />
                         </Grid>
@@ -72,7 +70,7 @@ const Table: React.FC<TableProps> = ({ head, body, rowsPerPage, onDelete, onEdit
                 <React.Fragment>
                     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table className="w-full text-sm text-left rtl:text-right">
-                            <TableHeader head={head} />
+                            <TableHeader columns={columns} />
                         </table>
                     </div>
                     <Grid direction='row' classNames='m-auto items-center justify-center'>

@@ -111,24 +111,24 @@ export interface ToggleFieldProps {
 }
 
 export interface TableProps {
-    head: string[],
-    body: string[] | undefined | object[],
-    rowsPerPage: number,
+    model?: string
+    columns: string[],
+    rows: string[] | undefined | object[],
     filterValue?: string,
-    onEdit?: () => void
-    onDelete?: () => void
+    onEdit?: () => void,
+    onDelete?: () => void,
 }
 
 export interface TableHeaderProps {
-    head: string[],
-    onEdit?: () => void
-    onDelete?: () => void
+    columns: string[],
+    onEdit?: () => void,
+    onDelete?: () => void,
 }
 
 export interface TableBodyProps {
-    body: string[] | object[] | undefined,
-    onEdit?: () => void
-    onDelete?: () => void
+    rows: string[] | object[] | undefined,
+    onEdit?: () => void,
+    onDelete?: () => void,
 }
 
 export interface TablePaginationProps {

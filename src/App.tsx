@@ -46,13 +46,12 @@ const App: React.FC  =()=> {
             </Grid>
           </Grid>
           {/* <FormExample /> */}
-
           <Table
-          head={TABLE_HEAD}
-          body={tabledata}
-          rowsPerPage={5}
-          onEdit={()=>{console.log('edit')}}
-          onDelete={()=>{alert('delete')}}
+            model='test'
+            columns={TABLE_HEAD}
+            rows={tabledata}
+            onEdit={()=>{alert('edit')}}
+            onDelete={()=>{alert('delete')}}
           />
         </Grid>
         <Typography textSize='caption' textStyle='secondary' text={t('placeholder')}/> 

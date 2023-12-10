@@ -30,6 +30,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "addon-redux": "^2.0.11",
     "classnames": "^2.3.2",
+    "file-saver": "^2.0.5",
     "flag-icons": "^6.11.0",
     "formik": "^2.4.4",
     "i18next": "^23.5.1",
@@ -44,6 +45,7 @@
     "react-router-dom": "^6.15.0",
     "react-select": "^5.7.5",
     "remixicon": "^3.5.0",
+    "xlsx": "^0.18.5",
     "yup": "^1.2.0"
   },
   "devDependencies": {

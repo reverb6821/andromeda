@@ -3,7 +3,16 @@ import { Field, ErrorMessage } from 'formik';
 import * as React from "react";
 
 import Typography from '@/components/ui/Typography/Typography';
-import { PasswordFieldProps } from '@/interfaces/components.properties';
+
+interface PasswordFieldProps {
+    label: string,
+    placeholder?: string,
+    disabled?: boolean,
+    model: string,
+    helper?: string,
+    value?: string,
+    onChange?: (event: React.MouseEvent) => void,
+}
 
 const PasswordField: React.FC<PasswordFieldProps> = ({
     label,

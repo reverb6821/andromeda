@@ -1,6 +1,8 @@
 import * as React from "react";
 
-import { TooltipProps } from '@/interfaces/components.properties';
+interface TooltipProps {
+  tooltipText?: string,
+}
 
 const Tooltip: React.FC<TooltipProps> = ({ tooltipText }) => {
   const [tooltipStatus, setTooltipStatus] = React.useState(0);

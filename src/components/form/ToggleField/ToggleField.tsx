@@ -3,7 +3,14 @@ import { Field, ErrorMessage } from 'formik';
 import * as React from "react";
 
 import Grid from '@/components/ui/Grid/Grid';
-import { ToggleFieldProps } from '@/interfaces/components.properties';
+
+interface ToggleFieldProps {
+    label: string,
+    disabled?: boolean,
+    model: string,
+    value: boolean,
+    tooltipText?: string,
+}
 
 const ToggleField: React.FC<ToggleFieldProps> = ({ label, disabled, model }) => {
   return (

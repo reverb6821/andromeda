@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useTranslation } from 'react-i18next';
 import { useSelector } from "react-redux";
 
-import ModalContainer from '@/components/modal/ModalContainer';
+import Logo from '@/assets/logo-placeholder-image.png'
 import Grid from '@/components/ui/Grid/Grid';
 import { RootState } from "@/store/store";
 
@@ -17,45 +17,46 @@ import {TABLE_HEAD, TABLE_ROWS} from './mock/table';
 const App: React.FC  =()=> {
   const { t } = useTranslation();
   const isDarkMode = useSelector((content: RootState) => content.theme.isDarkMode) || null;
-  const  headerEl = [{label: 'uno', route: 'uno'},{label: 'due', route: 'due'}]
+  const  headerEl = [{label: 'Login', route: 'uno'},{label: 'Register', route: 'due'}]
 
-  const tabledata = TABLE_ROWS.map((el)=>{
-    const obj = {
-      id: el.id,
-      name: el.name,
-      email: el.email,
-      title: el.title,
-      department: el.department,
-      status:<Badge label={el.status} badgeStyle={el.status === 'Active' ? 'primary--success' : 'primary--alert'}/>,
-      role: el.role,
-      age: el.age,
-      imgUrl: <img className="w-10 h-10 rounded-full" src={el.imgUrl} alt="Jese image" />
-    }
-    return Object.values(obj)
-  })
+  // const tabledata = TABLE_ROWS.map((el)=>{
+  //  return [
+  //     el.id,
+  //     el.name,
+  //     el.email,
+  //     el.title,
+  //     el.department,
+  //     <Badge label={el.status} badgeStyle={el.status === 'Active' ? 'primary--success' : 'primary--alert'}/>,
+  //     el.role,
+  //     el.age,
+  //     <img className="w-10 h-10 rounded-full" src={el.imgUrl} alt="Jese image" />
+  //   ]
+  // })
 
   return (
     <React.Fragment>
-      <div className={`App ${isDarkMode ? "dark" : ""}`}>
-        <Header headerTitle='test title' headerEl={headerEl}/>
+      <div className={`App w-full ${isDarkMode ? "dark" : ""}`}>
+        <Header
+          headerLogo={Logo}
+          headerTitle='Andromeda'
+          headerSubTitle='A Component Collection'
+          headerEl={headerEl}
+          />
 
         <Grid direction='column' classNames='m-auto items-center justify-center dark:bg-slate-600'>
-          <Grid direction='column'>
-            <Grid direction='row'>
-              <ModalContainer />
-            </Grid>
-          </Grid>
+          <Typography textSize='caption' textStyle='secondary' text={t('placeholder')}/> 
+          <Typography textSize='caption' textStyle='secondary' text={t('date', { date: new Date() })}/> 
           {/* <FormExample /> */}
-          <Table
+          {/* <Table
             model='test'
             columns={TABLE_HEAD}
             rows={tabledata}
-            onEdit={()=>{alert('edit')}}
-            onDelete={()=>{alert('delete')}}
-          />
+            onEdit={()=>{alert('edit clic')}}
+            onDelete={(id: number)=>{removeUser(id)}}
+            emptyTable={()=>{alert('empty')}}
+          /> */}
         </Grid>
-        <Typography textSize='caption' textStyle='secondary' text={t('placeholder')}/> 
-        <Typography textSize='caption' textStyle='secondary' text={t('date', { date: new Date() })}/> 
+       
         <Footer footerTitle='ciao' footerEl={headerEl} />
     </div>
     </React.Fragment>

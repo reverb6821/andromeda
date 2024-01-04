@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { TablePaginationProps } from '@/interfaces/components.properties';
+interface TablePaginationProps {
+  currentPage: number;
+  totalCount: number;
+  pageSize: number;
+  onPageChange: (page: number) => void;
+}
 
 const TablePagination: React.FC<TablePaginationProps> = ({ currentPage, totalCount, pageSize, onPageChange }) => {
 const { t } = useTranslation();

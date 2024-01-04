@@ -1,0 +1,52 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Table from '../Table';
+
+import * as TableStory from './Table.stories.tsx' 
+
+<Meta of={TableStory} title="Table" />
+
+# Table
+
+Table component with different props.
+
+<Canvas of={Table.TableExample} />
+
+```ts
+import Table from './components/Table/Table';
+
+const Table = () => {
+  return (
+
+    const tabledata = TABLE_ROWS.map((el)=>{
+        const obj = {
+        id: el.id,
+        name: el.name,
+        email: el.email,
+        title: el.title,
+        department: el.department,
+        status:<Badge label={el.status} badgeStyle={el.status === 'Active' ? 'primary--success' : 'primary--alert'}/>,
+        role: el.role,
+        age: el.age,
+        imgUrl: <img className="w-10 h-10 rounded-full" src={el.imgUrl} alt="Jese image" />
+        }
+        return Object.values(obj)
+    })
+
+    <Table
+        model='test'
+        columns={TABLE_HEAD}
+        rows={tabledata}
+        onEdit={()=>{alert('edit')}}
+        onDelete={()=>{alert('delete')}}
+    />
+  );
+};
+
+export default Table;
+```
+#### Arguments
+- **model** - A string that represents the name of the table. It is necessary for the export.
+- **columns** - It indicate the element of the thead. It accept array.
+- **rows** - It indicate the element of the inside the rows. It accept object. you need to manipulate the obj.
+- **onEdit** - It indicate an action for edit the element of the selected row. It is optional value.
+- **model** -  It indicate an action for delete the rows. It is optional value.

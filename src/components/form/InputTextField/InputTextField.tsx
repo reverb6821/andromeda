@@ -3,7 +3,18 @@ import { Field, ErrorMessage } from 'formik';
 import * as React from "react";
 
 import Typography from '@/components/ui/Typography/Typography';
-import { InputTextFieldProps } from '@/interfaces/components.properties';
+
+interface InputTextFieldProps {
+  label: string,
+  placeholder?: string,
+  disabled?: boolean,
+  type?: string,
+  icon?: string,
+  helper?: string,
+  model: string,
+  value?: string,
+  onChange?: (event: React.MouseEvent) => void,
+}
 
 const InputTextField: React.FC<InputTextFieldProps> = ({
   label,

@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Provider , connect, ConnectedProps } from 'react-redux';
 
-
 import { showModal } from '@/store/actions/modal.actions';
 import store from '@/store/store.ts';
 
 import Button from '../../button/Button';
 import Modal from '../Modal';
+
 const meta: Meta<typeof Modal> = {
     title: "Andromeda/UI/Modal",
     component: Modal,

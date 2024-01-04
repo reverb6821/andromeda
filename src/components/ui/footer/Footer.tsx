@@ -1,7 +1,15 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { FooterProps } from '@/interfaces/components.properties';
+interface FooterProps {
+    footerTitle: string,
+    footerEl: itemProps[],
+}
+
+interface itemProps {
+    label: string,
+    route: string,
+}
 
 const Footer: React.FC<FooterProps> =({footerTitle, footerEl})=>{
     const { t } = useTranslation();

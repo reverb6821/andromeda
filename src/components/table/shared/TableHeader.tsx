@@ -1,6 +1,10 @@
 import * as React from 'react';
 
-import { TableHeaderProps } from '@/interfaces/components.properties';
+interface TableHeaderProps {
+    columns: string[],
+    onEdit?: () => void,
+    onDelete?: () => void,
+}
 
 const TableHeader: React.FC<TableHeaderProps> =({columns, onEdit, onDelete})=>{
 

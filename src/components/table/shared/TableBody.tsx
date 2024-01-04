@@ -3,9 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { connect, ConnectedProps } from 'react-redux';
 
 import Modal from '@/components/modal/Modal'
-import Typography from '@/components/ui/Typography/Typography';
-import { TableBodyProps } from '@/interfaces/components.properties';
 import { showModal, hideModal } from '@/store/actions/modal.actions';
+
+import DeleteModalChildren from './DeleteModal/DeleteModalChildren';
+
+interface TableBodyProps {
+    rows: string[] | object[] | undefined,
+    onEdit?: () => void,
+    onDelete?: () => void,
+}
 
 const mapDispatchToProps = {
     dispatchShowModal: showModal,
@@ -19,10 +25,6 @@ type AppProps = object & ConnectedProps<typeof connector>;
 const TableBody: React.FC<TableBodyProps & AppProps> = ({ rows, onEdit, onDelete, dispatchShowModal, dispatchHideModal }) => {
     const { t } = useTranslation();
 
-    const onCloseButtonClick = () => {
-        dispatchHideModal();
-    };
-
     return (
         <React.Fragment>
             <tbody>
@@ -33,8 +35,9 @@ const TableBody: React.FC<TableBodyProps & AppProps> = ({ rows, onEdit, onDelete
                                 {item}
                             </th>
                         )}
+
                         {onDelete || onEdit ? (
-                            <td className="flex items-center px-6 py-4">
+                            <td className="flex items-center p-6">
                                 {onEdit ? (
                                     <button type='button' onClick={onEdit} className="font-medium text-blue-600 hover:text-blue-800">
                                         <i className="ri-edit-2-line"></i>
@@ -44,28 +47,25 @@ const TableBody: React.FC<TableBodyProps & AppProps> = ({ rows, onEdit, onDelete
                                     <button
                                         type='button'
                                         className="font-medium text-red-600 hover:text-red-800 ms-3"
-                                        onClick={() => {
+                                        data-el={JSON.stringify(el[0])}
+                                        onClick={(event) => {
+                                            const el = event.currentTarget.getAttribute('data-el');
+                                            if (el !== null) {
                                             dispatchShowModal({
                                                 size: 'sm',
                                                 title: t('t.app.table.delete.title'),
                                                 children: (
-                                                    <div className='p-2 md:p-2 text-center'>
-                                                        <i className="ri-alert-line text-5xl text-red-600"></i>
-                                                        <Typography
-                                                            textSize='2xl'
-                                                            textStyle='secondary'
-                                                            text={t('t.app.table.delete.alert')}
-                                                        />
-                                                    </div>
+                                                   <DeleteModalChildren />
                                                 ),
                                                 primaryBtnLabel: t('t.app.generic.confirm'),
                                                 modalBtnStyle: 'primary--alert',
                                                 onBtnClickPrimary: () => {
-                                                    { onDelete() }
-                                                    onCloseButtonClick()
+                                                    if(onDelete) { onDelete(value) }
+                                                    dispatchHideModal();
                                                 },
                                                 btnSecondaryLabel: t('t.app.generic.cancel'),
                                             })
+                                            }
                                         }}
                                     >
                                         <i className="ri-delete-bin-5-line"></i>

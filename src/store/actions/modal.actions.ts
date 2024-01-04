@@ -1,4 +1,13 @@
-import { ModalProps } from '@/interfaces/components.properties';
+interface ModalProps {
+  size: string,
+  title: string,
+  children?: JSX.Element, 
+  isLoading?: boolean,
+  primaryBtnLabel: string,
+  modalBtnStyle: string,
+  onBtnClickPrimary: (event: React.MouseEvent) => void,
+  btnSecondaryLabel: string,
+}
 
 export enum ModalActionTypes {
   ShowModal,

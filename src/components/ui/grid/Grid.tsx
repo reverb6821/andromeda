@@ -1,7 +1,11 @@
 import classnames from 'classnames';
 import * as React from 'react';
 
-import { GridProps } from '@/interfaces/components.properties';
+interface GridProps {
+    children?: JSX.Element|JSX.Element[],
+    classNames?: string,
+    direction: string,
+}
 
 const Grid: React.FC<GridProps> = ({children, classNames, direction}) => {
     return(

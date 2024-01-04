@@ -1,7 +1,11 @@
 import classnames from "classnames";
 import * as React from "react";
 
-import { BadgeProps } from '@/interfaces/components.properties';
+interface BadgeProps {
+  badgeStyle: string,
+  label: string;
+}
+
 
 const Badge: React.FC<BadgeProps> = ({
   badgeStyle,

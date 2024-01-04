@@ -3,15 +3,25 @@ import { useTranslation } from 'react-i18next';
 
 import Grid from '@/components/ui/Grid/Grid';
 import Typography from '@/components/ui/Typography/Typography';
-import { TableProps } from '@/interfaces/components.properties';
 
-import ExportButton from './shared/ExportButton';
+import EmptyTable from './shared/EmptyTable';
+import ExportTableButton from './shared/ExportTable/ExportTableButton';
 import TableBody from './shared/TableBody';
 import TableHeader from './shared/TableHeader';
 import TablePagination from './shared/TablePagination';
 import TableSearch from './shared/TableSearch';
 
-const Table: React.FC<TableProps> = ({ columns, rows, onDelete, onEdit, model }) => {
+interface TableProps {
+    model?: string
+    columns: string[],
+    rows:  { [key: string]: string | number | boolean; }[],
+    filterValue?: string,
+    onEdit?: () => void,
+    onDelete?: () => void,
+    emptyTable?: () => void,
+}
+
+const Table: React.FC<TableProps> = ({ columns, rows, onDelete,  emptyTable, onEdit, model }) => {
     const [currentPage, setCurrentPage] = React.useState(1);
     const [currentRowsPerPage, setCurrentRowsPerPage] = React.useState(15);
     const { t } = useTranslation();
@@ -31,13 +41,20 @@ const Table: React.FC<TableProps> = ({ columns, rows, onDelete, onEdit, model })
                     <div className="relative">
                         <div className="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
                             <TableSearch />
-                            {model ? (
-                               <ExportButton
-                                data={rows}
-                                headers={columns}
-                                model={model}
-                                />
-                            ) : null}
+                            <Grid direction='row' classNames='ml-2'>
+                                {model ? (
+                                    <ExportTableButton
+                                    data={rows}
+                                    headers={columns}
+                                    model={model}
+                                    />
+                                ) : (<div/>)}
+                                {emptyTable ? (
+                                    <EmptyTable emptyTable={emptyTable} />
+                                ) : (
+                                <div/>
+                                )}
+                            </Grid>
                         </div>
                         <div className='overflow-x-auto shadow-lg sm:rounded-lg'>
                             <table className="w-full text-sm text-left rtl:text-right">
@@ -68,7 +85,17 @@ const Table: React.FC<TableProps> = ({ columns, rows, onDelete, onEdit, model })
                 </React.Fragment>
             ) : (
                 <React.Fragment>
-                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <div className="relative">
+                        <div className="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
+                            <TableSearch />
+                            {model ? (
+                               <ExportTableButton
+                                data={rows}
+                                headers={columns}
+                                model={model}
+                                />
+                            ) : null}
+                        </div>
                         <table className="w-full text-sm text-left rtl:text-right">
                             <TableHeader columns={columns} />
                         </table>

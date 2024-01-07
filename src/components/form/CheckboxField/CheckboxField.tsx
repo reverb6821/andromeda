@@ -2,8 +2,8 @@ import classnames from "classnames";
 import { Field, ErrorMessage } from 'formik';
 import * as React from "react";
 
-import Tooltip from '@/components/partials/tooltip/Tooltip';
 import Grid from '@/components/ui/Grid/Grid';
+import Tooltip from '@/components/ui/tooltip/Tooltip';
 
 import { CheckboxFieldProps } from './Checkbox.properties';
 

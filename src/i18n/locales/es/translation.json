@@ -2,6 +2,12 @@
     "placeholder": "El viernes pasado vi un gusano azul a rayas manchado estrecharle la mano con un lagarto sin patas.",
     "date": "Hoy es {{date, DATE_HUGE}}",
     
+    "t.app.generic.sidebar.lang.it": "italiano",
+    "t.app.generic.sidebar.lang.en": "Inglés",
+    "t.app.generic.sidebar.lang.es": "Español",
+    "t.app.generic.sidebar.lang.fr": "francés",
+    "t.app.generic.sidebar.lang.de": "alemán",
+
     "t.app.layout.partials.footer.date": "{{date, short}}",
 
     "t.app.generic.confirm" : "Confirma",

@@ -24,14 +24,13 @@ const App: React.FC = () => {
     {
       title: 'Home',
       path: '/',
-      //   icon: <Icon icon="lucide:home" width="24" height="24" />,
       icon: 'ri-dashboard-line',
 
     },
     {
       title: 'Projects',
       path: '/projects',
-      icon: 'ri-dashboard-line',
+      icon: 'ri-bar-chart-2-line',
       submenu: true,
       subMenuItems: [
         { title: 'All', path: '/projects' },
@@ -42,12 +41,12 @@ const App: React.FC = () => {
     {
       title: 'Messages',
       path: '/messages',
-      icon: 'ri-dashboard-line',
+      icon: 'ri-discuss-line',
     },
     {
       title: 'Settings',
       path: '/settings',
-      icon: 'ri-dashboard-line',
+      icon: 'ri-equalizer-line',
       submenu: true,
       subMenuItems: [
         { title: 'Account', path: '/settings/account' },
@@ -57,7 +56,7 @@ const App: React.FC = () => {
     {
       title: 'Help',
       path: '/help',
-      icon: 'ri-dashboard-line',
+      icon: 'ri-question-line',
     },
   ];
 

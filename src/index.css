@@ -48,4 +48,8 @@
     .color-primary {
         @apply bg-slate-200 border-slate-200 dark:bg-slate-700 shadow-lg
     }
+
+    .color-secondary {
+        @apply bg-slate-300 border-slate-200 dark:bg-slate-600
+    }
 }

@@ -2,6 +2,12 @@
     "placeholder": "Letzten Freitag sah ich einen gefleckten gestreiften blauen Wurm, der einer beinlosen Eidechse die Hand schüttelte.",
     "date": "Heute ist {{date, DATE_HUGE}}",
 
+    "t.app.generic.sidebar.lang.it": "Italienisch",
+    "t.app.generic.sidebar.lang.en": "Englisch",
+    "t.app.generic.sidebar.lang.es": "Spanisch",
+    "t.app.generic.sidebar.lang.fr": "Französisch",
+    "t.app.generic.sidebar.lang.de": "Deutsch",
+    
     "t.app.generic.confirm" : "Bestätigen",
     "t.app.generic.cancel" : "Stornieren",
 

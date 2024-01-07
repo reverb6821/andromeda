@@ -4,6 +4,12 @@
   
   "t.app.layout.partials.footer.date": "{{date, short}}",
 
+  "t.app.generic.sidebar.lang.it" : "Italian",
+  "t.app.generic.sidebar.lang.en" : "English",
+  "t.app.generic.sidebar.lang.es" : "Spanish",
+  "t.app.generic.sidebar.lang.fr" : "French",
+  "t.app.generic.sidebar.lang.de" : "German",
+  
   "t.app.generic.confirm" : "Confirm",
   "t.app.generic.cancel" : "Cancel",
 

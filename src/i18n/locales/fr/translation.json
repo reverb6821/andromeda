@@ -2,6 +2,12 @@
     "placeholder": "Vendredi dernier, j'ai vu un ver bleu rayé tacheté serrer la main d'un lézard sans pattes.",
     "date": "Aujourd'hui c'est {{date, DATE_HUGE}}",
 
+    "t.app.generic.sidebar.lang.it" : "Italien",
+    "t.app.generic.sidebar.lang.en" : "Anglais",
+    "t.app.generic.sidebar.lang.es" : "Espagnol",
+    "t.app.generic.sidebar.lang.fr" : "Français",
+    "t.app.generic.sidebar.lang.de" : "Allemand",
+
     "t.app.generic.confirm" : "Confirmer",
     "t.app.generic.cancel" : "Annuler",
 

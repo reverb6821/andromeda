@@ -8,7 +8,7 @@ import Checkbox from '@/components/form/CheckboxField/CheckboxField';
 import FormExample from '@/components/form/FormExample';
 import InputTextField from '@/components/form/InputTextField/InputTextField';
 import PasswordField from '@/components/form/PasswordTextField/PasswordField';
-import CustomSelect from '@/components/form/SelectField/CustomSelect';
+import SelectField from '@/components/form/SelectField/SelectField';
 import Grid from '@/components/ui/Grid/Grid';
 
 const meta: Meta<typeof FormExample> = {
@@ -121,13 +121,13 @@ export const FormExampleLogin: Story = () => {
                             />
                         </Grid>
                         <Grid direction='row'>
-                            <CustomSelect
+                            <SelectField
                                 label='work'
                                 name="Work"
                                 isMulti={false}
                                 options={options}
                             />
-                             <CustomSelect
+                             <SelectField
                                 label='country'
                                 name="Country"
                                 isMulti={true}

@@ -1,15 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-interface FooterProps {
-    footerTitle: string,
-    footerEl: itemProps[],
-}
-
-interface itemProps {
-    label: string,
-    route: string,
-}
+import { FooterProps, itemProps } from './Footer.properties';
 
 const Footer: React.FC<FooterProps> =({footerTitle, footerEl})=>{
     const { t } = useTranslation();
@@ -22,7 +14,7 @@ const Footer: React.FC<FooterProps> =({footerTitle, footerEl})=>{
                 </div>
                 <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-color-primary sm:mt-0">
                 {footerEl && footerEl.length > 1
-                    ? footerEl.map((el, index) => (
+                    ? footerEl.map((el: itemProps, index: number) => (
                     <li key={index}>
                         <a href="#" className="mr-4 hover:underline md:mr-6 ">{el.label}</a>
                     </li>

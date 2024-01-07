@@ -1,20 +1,14 @@
 import {useField} from "formik";
 import * as React from "react";
 import { useTranslation } from 'react-i18next';
-import Select, {Props} from "react-select";
+import Select from "react-select";
 
 import Typography from '@/components/ui/Typography/Typography';
 
-export interface CustomSelectProps extends Props{
-    name : string,
-    label? : string,
-    isMulti: boolean,
-    disabled?: boolean,
-    help?: string,
-    sendValue? : (event: React.MouseEvent) => void,
-}
+import { SelectFieldProps } from './SelectField.properties';
 
-const CustomSelect:React.FC<CustomSelectProps> =({name,label , isMulti, disabled, sendValue, help, ...props})=> {
+
+const SelectField:React.FC<SelectFieldProps> =({name,label , isMulti, disabled, sendValue, help, ...props})=> {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const [field , meta , helper] = useField(name)
         const { t } = useTranslation();
@@ -66,4 +60,4 @@ const CustomSelect:React.FC<CustomSelectProps> =({name,label , isMulti, disabled
     )
 }
 
-export default CustomSelect
+export default SelectField

@@ -4,15 +4,7 @@ import * as React from "react";
 
 import Typography from '@/components/ui/Typography/Typography';
 
-interface PasswordFieldProps {
-    label: string,
-    placeholder?: string,
-    disabled?: boolean,
-    model: string,
-    helper?: string,
-    value?: string,
-    onChange?: (event: React.MouseEvent) => void,
-}
+import { PasswordFieldProps } from './PasswordField.properties';
 
 const PasswordField: React.FC<PasswordFieldProps> = ({
     label,

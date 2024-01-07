@@ -5,13 +5,7 @@ import * as React from "react";
 import Tooltip from '@/components/partials/tooltip/Tooltip';
 import Grid from '@/components/ui/Grid/Grid';
 
-interface CheckboxFieldProps {
-    label: string,
-    disabled?: boolean,
-    model: string,
-    value: boolean,
-    tooltipText?: string,
-}
+import { CheckboxFieldProps } from './Checkbox.properties';
 
 const Checkbox: React.FC<CheckboxFieldProps> = ({ label, disabled, model, tooltipText }) => {
   return (

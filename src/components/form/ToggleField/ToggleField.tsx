@@ -4,13 +4,7 @@ import * as React from "react";
 
 import Grid from '@/components/ui/Grid/Grid';
 
-interface ToggleFieldProps {
-    label: string,
-    disabled?: boolean,
-    model: string,
-    value: boolean,
-    tooltipText?: string,
-}
+import { ToggleFieldProps } from './ToggleField.properties';
 
 const ToggleField: React.FC<ToggleFieldProps> = ({ label, disabled, model }) => {
   return (

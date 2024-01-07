@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import CustomSelect from '../CustomSelect';
+import SelectField from '../SelectField';
 
-const meta: Meta<typeof CustomSelect> = {
+const meta: Meta<typeof SelectField> = {
     title: "Andromeda/Forms/Select",
-    component: CustomSelect,
+    component: SelectField,
 };
 
 export default meta;
-type Story = StoryObj<typeof CustomSelect>;
+type Story = StoryObj<typeof SelectField>;
 
-export const CustomSelectExample: Story = {
+export const SelectFieldExample: Story = {
     args: {
         label:'Country',
         name:"country",
@@ -26,7 +26,7 @@ export const CustomSelectExample: Story = {
     },
   };
 
-  export const CustomMultiSelectExample: Story = {
+  export const SelectFieldMultiExample: Story = {
     args: {
         label:'Work',
         name:"register.work",

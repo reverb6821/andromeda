@@ -8,7 +8,7 @@ import Grid from '@/components/ui/Grid/Grid';
 
 import Checkbox from './CheckboxField/CheckboxField';
 import PasswordField from './PasswordTextField/PasswordField';
-import CustomSelect from './SelectField/CustomSelect';
+import CustomSelect from './SelectField/SelectField';
 import ToggleField from './ToggleField/ToggleField';
 
 const FormExample: React.FC = () => {

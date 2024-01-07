@@ -1,17 +1,8 @@
 import classnames from "classnames";
 import * as React from 'react'
 
+import { ButtonProps } from './Button.properties';
 import Loader from "../partials/loader/Loader";
-
-interface ButtonProps {
-  btnStyle: string,
-  label: string,
-  isLoading?: boolean,
-  icon?: string,
-  disabled?: boolean,
-  type: "button"|"submit"|"reset"|undefined,
-  onBtnClick?: () => void,
-}
 
 const Button: React.FC<ButtonProps> = ({
   btnStyle,

@@ -1,23 +1,23 @@
 import { Canvas, Meta } from "@storybook/blocks";
-import CustomSelect from '../CustomSelect';
+import SelectField from '../SelectField';
 import * as SelectFieldStory from './SelectField.stories.tsx"" ;
 
-<Meta of={SelectFieldStory} title="CustomSelect" />
+<Meta of={SelectFieldStory} title="SelectField" />
 
-# CustomSelect
+# SelectField
 
-CustomSelect component with different props.
+SelectField component with different props.
 
-<Canvas of={SelectFieldStory.CustomSelectExample} />
+<Canvas of={SelectFieldStory.SelectFieldExample} />
 
 ## Usage
 
 ```ts
-import CustomSelect from '@/components/form/SelectField/CustomSelect';
+import SelectField from '@/components/form/SelectField/SelectField';
 
-const CustomSelectEx = () => {
+const SelectFieldEx = () => {
   return (
-    <CustomSelect
+    <SelectField
         label='country'
         name="country"
         isMulti={true}
@@ -25,6 +25,6 @@ const CustomSelectEx = () => {
     />
   );
 };
-export default CustomSelectEx;
+export default SelectFieldEx;
 ```
 #### Arguments

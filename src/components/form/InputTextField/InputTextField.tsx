@@ -4,17 +4,7 @@ import * as React from "react";
 
 import Typography from '@/components/ui/Typography/Typography';
 
-interface InputTextFieldProps {
-  label: string,
-  placeholder?: string,
-  disabled?: boolean,
-  type?: string,
-  icon?: string,
-  helper?: string,
-  model: string,
-  value?: string,
-  onChange?: (event: React.MouseEvent) => void,
-}
+import { InputTextFieldProps } from './InputTextField.properties';
 
 const InputTextField: React.FC<InputTextFieldProps> = ({
   label,

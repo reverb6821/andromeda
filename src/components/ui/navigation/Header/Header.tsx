@@ -1,21 +1,9 @@
 import * as React from 'react'
 import { NavLink } from 'react-router-dom';
 
-import LanguageSwitcher from '@/components/partials/LanguageSwitcher';
-import ThemeSwitcher from '@/components/partials/ThemeSwitcher';
-
-interface HeaderProps {
-    headerTitle: string,
-    headerSubTitle: string,
-    headerEl: itemProps[],
-    headerLogo: string
-}
-
-interface itemProps {
-    label: string,
-    route: string,
-}
-
+import { HeaderProps, itemProps } from './Header.properties';
+import LanguageSwitcher from './shared/LanguageSwitcher';
+import ThemeSwitcher from './shared/ThemeSwitcher';
 
 const Header: React.FC<HeaderProps> = ({ headerLogo, headerTitle, headerSubTitle, headerEl }) => {
     // const navigate: NavigateFunction = useNavigate();
@@ -28,17 +16,17 @@ const Header: React.FC<HeaderProps> = ({ headerLogo, headerTitle, headerSubTitle
                     <div className='flex flex-row items-center'>
                         <img width={80} height={80} src={headerLogo} />
                         <div className={`flex flex-col pl-4 md:block hidden`}>
-                            <h1 className="font-semibold text-xl text-color-primary">
+                            <h1 className="font-semibold text-md text-color-primary">
                                 {headerTitle}
                             </h1>
-                            <p className="text-base font-light text-color-secondary">
+                            <p className="text-sm font-light text-color-secondary">
                                 {headerSubTitle}
                             </p>
                         </div>
                     </div>
                     <div className="space-x-8 hidden md:block">
                         {headerEl && headerEl.length > 1
-                            ? headerEl.map((el, index) => (
+                            ? headerEl.map((el: itemProps, index: number) => (
                                 <NavLink
                                     key={index}
                                     to={el.route}
@@ -69,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ headerLogo, headerTitle, headerSubTitle
                 </div>
                 <div className={`flex justify-center space-x-8 md:hidden mt-4 ${mobile ? "block" : "hidden"}`}>
                     {headerEl && headerEl.length > 1
-                        ? headerEl.map((el, index) => (
+                        ? headerEl.map((el: itemProps, index: number) => (
                             <NavLink
                                 key={index}
                                 to={el.route}

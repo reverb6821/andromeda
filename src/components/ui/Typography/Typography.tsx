@@ -1,12 +1,7 @@
 import classnames from "classnames";
 import * as React from "react";
 
-interface TypographyProps {
-  textStyle: string,
-  textSize: string,
-  text: string | undefined, 
-  classNames?: string,
-}
+import { TypographyProps } from './Typography.properties';
 
 const Typography: React.FC<TypographyProps> = ({
     textStyle,

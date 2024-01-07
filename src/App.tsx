@@ -7,59 +7,18 @@ import Grid from '@/components/ui/Grid/Grid';
 import { RootState } from "@/store/store";
 
 // import FormExample from './components/form/FormExample';
+import Button from './components/button/Button';
 import ModalContainer from './components/modal/ModalContainer';
-import Badge from './components/partials/badge/Badge';
-import Table from './components/Table/Table';
-import Footer from './components/ui/Footer/Footer';
-import Header from './components/ui/navigation/Header/Header';
 import Sidebar from './components/ui/navigation/Sidebar/Sidebar';
 import Typography from './components/ui/Typography/Typography';
-import { TABLE_HEAD, TABLE_ROWS } from './mock/table';
+import { SIDENAV_ITEMS } from './mock/sidebar';
 
 const App: React.FC = () => {
   const { t } = useTranslation();
   const isDarkMode = useSelector((content: RootState) => content.theme.isDarkMode) || null;
-  const headerEl = [{ label: 'Login', route: 'uno' }, { label: 'Register', route: 'due' }]
+  // const headerEl = [{ label: 'Login', route: 'uno' }, { label: 'Register', route: 'due' }]
 
-  const SIDENAV_ITEMS = [
-    {
-      title: 'Home',
-      path: '/',
-      icon: 'ri-dashboard-line',
 
-    },
-    {
-      title: 'Projects',
-      path: '/projects',
-      icon: 'ri-bar-chart-2-line',
-      submenu: true,
-      subMenuItems: [
-        { title: 'All', path: '/projects' },
-        { title: 'Web Design', path: '/projects/web-design' },
-        { title: 'Graphic Design', path: '/projects/graphic-design' },
-      ],
-    },
-    {
-      title: 'Messages',
-      path: '/messages',
-      icon: 'ri-discuss-line',
-    },
-    {
-      title: 'Settings',
-      path: '/settings',
-      icon: 'ri-equalizer-line',
-      submenu: true,
-      subMenuItems: [
-        { title: 'Account', path: '/settings/account' },
-        { title: 'Privacy', path: '/settings/privacy' },
-      ],
-    },
-    {
-      title: 'Help',
-      path: '/help',
-      icon: 'ri-question-line',
-    },
-  ];
 
   // const tabledata = TABLE_ROWS.map((el)=>{
   //  return [
@@ -95,6 +54,15 @@ const App: React.FC = () => {
             <Typography textSize='caption' textStyle='secondary' text={t('placeholder')} />
             <Typography textSize='caption' textStyle='secondary' text={t('date', { date: new Date() })} />
             <ModalContainer />
+            <Button
+              onBtnClick={() => {
+                alert('You clicked that button!');
+              }}
+              btnStyle='primary--alert'
+              type="submit"
+              label='Btn Example'
+              disabled={false}
+              isLoading={true} />
             {/* <FormExample /> */}
             {/* <Table
             model='test'

@@ -2,7 +2,7 @@ import classnames from "classnames";
 import * as React from 'react'
 
 import { ButtonProps } from './Button.properties';
-import Loader from "../partials/loader/Loader";
+import Loader from "./shared/Loader/Loader";
 
 const Button: React.FC<ButtonProps> = ({
   btnStyle,
@@ -35,7 +35,7 @@ const Button: React.FC<ButtonProps> = ({
         )}
       >
         {isLoading ? (
-          <Loader />
+          <Loader loaderStyle={btnStyle} />
         ) : (
           <React.Fragment>
             {icon ? (
@@ -44,7 +44,6 @@ const Button: React.FC<ButtonProps> = ({
                   className={classnames(`${icon} mr-2`, {
                     "text-color-primary text-slate-200": btnStyle === 'primary' || btnStyle ==='alert' || btnStyle ==='warn' || btnStyle ==='success',
                     "text-sky-700 dark:text-slate-200": btnStyle === 'secondary',
-                    
                   })}
                 />
                 {label}

@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { connect, ConnectedProps } from 'react-redux';
 
-import { showModal } from '@/store/actions/modal.actions';
+import { showModal } from '@/components/modal/actions/modal.actions';
 
 import Modal from './Modal'
 import Button from '../button/Button';

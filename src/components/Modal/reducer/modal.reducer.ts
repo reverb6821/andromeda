@@ -1,20 +1,5 @@
-import { ModalAction, ModalActionTypes } from '../actions/modal.actions';
+import { ModalState, ModalAction, ModalActionTypes } from '../Modal.properties';
 
-interface ModalProps {
-  size: string,
-  title: string,
-  children?: JSX.Element, 
-  isLoading?: boolean,
-  primaryBtnLabel: string,
-  modalBtnStyle: string,
-  onBtnClickPrimary: (event: React.MouseEvent) => void,
-  btnSecondaryLabel: string,
-}
-
-type ModalState = {
-    modal: ModalProps | null | undefined;
-  };
-  
   const initialState: ModalState = {
     modal: null,
   };

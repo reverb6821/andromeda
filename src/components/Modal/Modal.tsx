@@ -3,7 +3,7 @@ import classnames from "classnames";
 import * as React from 'react'
 import { connect, ConnectedProps } from 'react-redux';
 
-import { hideModal } from '@/store/actions/modal.actions';
+import { hideModal } from '@/components/modal/actions/modal.actions';
 import { RootState } from "@/store/store";
 
 import Button from '../button/Button';

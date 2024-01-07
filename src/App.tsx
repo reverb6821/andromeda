@@ -7,11 +7,12 @@ import Grid from '@/components/ui/Grid/Grid';
 import { RootState } from "@/store/store";
 
 // import FormExample from './components/form/FormExample';
+import ModalContainer from './components/modal/ModalContainer';
 import Badge from './components/partials/badge/Badge';
 import Table from './components/Table/Table';
 import Footer from './components/ui/Footer/Footer';
 import Header from './components/ui/navigation/Header/Header';
-import Sidebar from './components/ui/navigation/SideNav/Sidebar';
+import Sidebar from './components/ui/navigation/Sidebar/Sidebar';
 import Typography from './components/ui/Typography/Typography';
 import { TABLE_HEAD, TABLE_ROWS } from './mock/table';
 
@@ -93,6 +94,7 @@ const App: React.FC = () => {
           <Grid direction='column' classNames='items-center justify-center dark:bg-slate-600'>
             <Typography textSize='caption' textStyle='secondary' text={t('placeholder')} />
             <Typography textSize='caption' textStyle='secondary' text={t('date', { date: new Date() })} />
+            <ModalContainer />
             {/* <FormExample /> */}
             {/* <Table
             model='test'

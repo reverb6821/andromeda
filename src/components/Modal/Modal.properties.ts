@@ -1,7 +1,7 @@
-interface ModalProps {
+export interface ModalProps {
   size: string,
   title: string,
-  children?: JSX.Element, 
+  children?: JSX.Element,
   isLoading?: boolean,
   primaryBtnLabel: string,
   modalBtnStyle: string,
@@ -19,15 +19,6 @@ export interface ModalAction {
   payload?: ModalProps;
 }
 
-export function showModal(payload: ModalProps): ModalAction {
-  return {
-    type: ModalActionTypes.ShowModal,
-    payload,
-  };
-}
-
-export function hideModal(): ModalAction {
-  return {
-    type: ModalActionTypes.HideModal,
-  };
-}
+export type ModalState = {
+  modal: ModalProps | null | undefined;
+};

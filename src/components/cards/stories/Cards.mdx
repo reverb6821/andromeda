@@ -1,0 +1,36 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Cards from "../Cards.tsx";
+import * as CardsStory from "./Cards.stories.tsx";
+
+<Meta of={CardsStory} title="Cards" />
+
+# Cards
+
+Cards component with different props.
+
+<Canvas of={CardsStory.WithoutImage} />
+
+## Usage
+
+```ts
+import Cards from '@/components/Cards/Cards.tsx;
+
+const Example = () => {
+  return (
+      <Cards
+        title='Lorem Ipsum'
+        subtitle='Lorem ipsum dolor sit amet'
+        action={()=>console.log('Clicked')}
+        actionLabel='Go To Page'
+      />
+  );
+};
+
+export default Cards;
+```
+
+#### Arguments
+- **title** - A string that represents the text content of the button.
+- **subtitle** -  A string that represents the text content of the button.
+- **image** - A string indicating the image path.. If there is a img, it will show the card with image..
+- **action** _`() => void`_ - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element.

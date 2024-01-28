@@ -15,7 +15,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, sidebarLogo, sidebarTitle, 
 
     return (
         <React.Fragment>
-            <div className="flex flex-no-wrap h-screen">
+            <div className="flex flex-no-wrap h-screen w-full">
                 <div className="w-96 absolute sm:relative color-primary shadow md:h-full flex-col justify-between hidden sm:flex">
                     <div className="px-8">
                         <div className="h-32 w-full my-10">
@@ -78,7 +78,8 @@ const Sidebar: React.FC<SidebarProps> = ({ children, sidebarLogo, sidebarTitle, 
                     </div>
                     <SidebarFooter isOpen={isOpen} />
                 </div>
-                <div className="container py-10 h-full w-full px-6 color-secondary">
+                
+                <div className="py-10 h-full w-full px-6 color-secondary">
                     <div className="w-full h-full">
                     {children}
                     </div>

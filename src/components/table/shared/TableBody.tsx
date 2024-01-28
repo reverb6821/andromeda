@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { connect, ConnectedProps } from 'react-redux';
 
 import Modal from '@/components/modal/Modal'
-import { showModal, hideModal } from '@/store/actions/modal.actions';
+import { showModal, hideModal } from '@/components/modal/actions/modal.actions';
 
 import DeleteModalChildren from './DeleteModal/DeleteModalChildren';
 

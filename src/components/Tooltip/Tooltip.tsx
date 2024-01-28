@@ -13,7 +13,7 @@ const Tooltip: React.FC<TooltipProps> = ({ tooltipText }) => {
         onMouseLeave={() => setTooltipStatus(0)}
       >
         <div className="mr-2 cursor-pointer">
-          <i className="ri-information-line text-sky-800 dark:text-slate-300 text-xl"></i>
+          <i className="ri-information-line text-sky-800 dark:text-slate-300 text-xl"/>
         </div>
         {tooltipStatus == 1 && (
           <div

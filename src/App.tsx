@@ -8,6 +8,7 @@ import { RootState } from "@/store/store";
 
 // import FormExample from './components/form/FormExample';
 import Button from './components/button/Button';
+import Cards from './components/cards/Cards';
 import ModalContainer from './components/modal/ModalContainer';
 import Sidebar from './components/ui/navigation/Sidebar/Sidebar';
 import Typography from './components/ui/Typography/Typography';
@@ -73,6 +74,21 @@ const App: React.FC = () => {
             emptyTable={()=>{alert('empty')}}
           /> */}
           </Grid>
+              <Cards
+              title='With Image'
+              subtitle='lorem ipsum dolor sit amet'
+              action={()=>console.log('object')}
+              actionLabel='goo oon'
+              image='https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg?w=1800&t=st=1705248476~exp=1705249076~hmac=237ae4f5bd39e27e61c01481c4d5ecd47bda3d243e3c39047225d14083d38a1d'
+              />
+
+            
+            <Cards
+              title='No Image'
+              subtitle='lorem ipsum dolor sit amet'
+              action={()=>console.log('object')}
+              actionLabel='goo oonss'
+              />
         </Sidebar>
         {/* <Footer footerTitle='ciao' footerEl={headerEl} /> */}
       </div>

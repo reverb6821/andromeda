@@ -18,10 +18,15 @@ export const SelectFieldExample: Story = {
         disabled: false,
         help: '',
         options:[
-            {label:'Italy', value: 'IT'},
-            {label:'France', value: 'FR'},
-            {label:'Spain', value: 'SP'},
-            {label:'Germany', value: 'DE'},
+            { label: "Grapes 🍇", value: "grapes" },
+            { label: "Mango 🥭", value: "mango" },
+            { label: "Strawberry 🍓", value: "strawberry" },
+            { label: "Watermelon 🍉", value: "watermelon" },
+            { label: "Pear 🍐", value: "pear", disabled: true },
+            { label: "Apple 🍎", value: "apple" },
+            { label: "Tangerine 🍊", value: "tangerine" },
+            { label: "Pineapple 🍍", value: "pineapple" },
+            { label: "Peach 🍑", value: "peach" }
         ],
     },
   };
@@ -34,9 +39,15 @@ export const SelectFieldExample: Story = {
         disabled: false,
         help: '',
         options:[
-            { value: "Developer", label: "dev" },
-            { value: "Tester", label: "tester" },
-            { value: "Analyst", label: "analyst" },
+            { label: "Grapes 🍇", value: "grapes" },
+            { label: "Mango 🥭", value: "mango" },
+            { label: "Strawberry 🍓", value: "strawberry" },
+            { label: "Watermelon 🍉", value: "watermelon" },
+            { label: "Pear 🍐", value: "pear", disabled: true },
+            { label: "Apple 🍎", value: "apple" },
+            { label: "Tangerine 🍊", value: "tangerine" },
+            { label: "Pineapple 🍍", value: "pineapple" },
+            { label: "Peach 🍑", value: "peach" }
         ],
     },
   };

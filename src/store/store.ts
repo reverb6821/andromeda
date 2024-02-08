@@ -1,7 +1,8 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 
+import modalReducer from '@/components/Modal/reducer/modal.reducer'
+
 import themeReducer from './reducer/theme.reducer'
-import modalReducer from '../components/modal/reducer/modal.reducer'
 
 const store = configureStore({
   reducer: {

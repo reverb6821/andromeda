@@ -3,14 +3,14 @@ import { render, fireEvent } from "@testing-library/react";
 import Tooltip from "../Tooltip";
 
 describe("Tooltip", () => {
-    test('Tooltip shows the correct text when the mouse enters', async () => {
-        const tooltipText = 'Lorem Ipsum dolor si amet';
+    test('renders component without crash', async () => {
+        const tooltipText = 'Lorem Ipsum dolor sit amet';
         const { container } = render(<Tooltip tooltipText={tooltipText} />);
         expect(container.querySelector('i')).toBeInTheDocument();
       });
 
     test('Tooltip shows the correct text when the mouse enters', async () => {
-        const tooltipText = 'Lorem Ipsum dolor si amet';
+        const tooltipText = 'Lorem Ipsum dolor sit amet';
         const { container, queryByText } = render(<Tooltip tooltipText={tooltipText} />);
         const tooltipSelector = container.querySelector('i')
         expect(queryByText(tooltipText)).toBeNull();
@@ -19,7 +19,7 @@ describe("Tooltip", () => {
       });
       
       test('Tooltip disappears when the mouse exits', async () => {
-        const tooltipText = 'Lorem Ipsum dolor si amet';
+        const tooltipText = 'Lorem Ipsum dolor sit amet';
         const { container, queryByText } = render(<Tooltip tooltipText={tooltipText} />);
         const tooltipSelector = container.querySelector('i')
         fireEvent.mouseEnter(tooltipSelector!);

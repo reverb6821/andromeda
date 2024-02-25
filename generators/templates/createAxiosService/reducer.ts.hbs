@@ -1,0 +1,88 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+import { {{pascalCase service}}Props } from '@/api/services/{{pascalCase service}}/{{pascalCase service}}.properties.ts'
+import {{pascalCase service}}Service from '@/api/services/{{pascalCase service}}/{{pascalCase service}}.service.ts'
+
+const initialState: {{pascalCase service}}Props[] = []
+
+export const create{{pascalCase service}} = createAsyncThunk(
+    '{{lowerCase service}}/create',
+    async(/* add props you need here */) => {
+        const res = await {{pascalCase service}}Service.create(/* add props you need here */);
+        return res.data;
+    }
+)
+
+export const retrieve{{pascalCase service}} = createAsyncThunk(
+    '{{lowerCase service}}/retrieve',
+    async() => {
+        const res = await {{pascalCase service}}Service.getAll();
+        return res.data;
+    }
+)
+
+export const update{{pascalCase service}} = createAsyncThunk(
+    '{{lowerCase service}}/update',
+    async({id, data}: {id: number, data: {{pascalCase service}}Props} ) => {
+        const res = await {{pascalCase service}}Service.update(id, data);
+        return res.data;
+    }
+)
+
+export const delete{{pascalCase service}} = createAsyncThunk(
+    '{{lowerCase service}}/delete',
+    async(id: number) => {
+        const res = await {{pascalCase service}}Service.remove(id);
+        return {id};
+    }
+)
+
+const {{lowerCase service}}Slice = createSlice({
+    name: '{{lowerCase service}}',
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+          .addCase(create{{pascalCase service}}.fulfilled, (state, action) => {
+            state.push(action.payload)
+          })
+          .addCase(retrieve{{pascalCase service}}.fulfilled, (state, action) => {
+            state.splice(0, state.length, ...action.payload)
+          })
+          .addCase(update{{pascalCase service}}.fulfilled, (state, action) => {
+            const index = state.findIndex(({{lowerCase service}}: {{pascalCase service}}Props) => {{lowerCase service}}.id === action.payload.id);
+            state[index] = {
+              ...state[index],
+              ...action.payload,
+            };
+          })
+          .addCase(delete{{pascalCase service}}.fulfilled, (state, action) => {
+            const index = state.findIndex(({ id }: {{pascalCase service}}Props) => id === action.payload.id);
+            state.splice(index, 1);
+          })
+     }
+    {{!-- extraReducers: {
+    [create{{pascalCase service}}.fulfilled]: (state, action) => {
+      state.push(action.payload);
+    },
+    [retrieve{{pascalCase service}}.fulfilled]: (state, action) => {
+      return [...action.payload];
+    },
+    [update{{pascalCase service}}.fulfilled]: (state, action) => {
+      const index = state.findIndex(({{lowerCase service}}: c) => {{lowerCase service}}.id === action.payload.id);
+      state[index] = {
+        ...state[index],
+        ...action.payload,
+      };
+    },
+    [delete{{pascalCase service}}.fulfilled]: (state, action) => {
+      const index = state.findIndex(({ id: number }: {{pascalCase service}}Props) => id === action.payload.id);
+      state.splice(index, 1);
+    },
+  }, --}}
+})
+
+{{!-- const { reducer } = {{lowerCase service}}Slice;
+export default reducer; --}}
+
+export default {{lowerCase service}}Slice.reducer

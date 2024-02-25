@@ -1,12 +1,10 @@
 import type { Preview } from "@storybook/react";
 import { withRouter } from 'storybook-addon-react-router-v6';
-import withFormik from '@bbbtech/storybook-formik';
-import i18n from '../src/i18n/config';
+import { withRedux } from './withRedux';
 
 import 'tailwindcss/tailwind.css'
-import '../src/index.css'
+import '../src/assets/styles/index.css'
 import 'remixicon/fonts/remixicon.css'
-import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 const preview: Preview = {
   parameters: {
@@ -17,9 +15,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    i18n,
+    decorators: [
+      withRedux,
+      withRouter, 
+    ]
   },
-  decorators: [withRouter, withFormik]
 };
 
 export default preview;

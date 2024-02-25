@@ -1,23 +1,20 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom/client'
-import { Provider } from "react-redux";
+import React from 'react'
+import {createRoot} from 'react-dom/client'
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
 
-import store from "@/store/store.ts";
+import Container from '@/routes/Container'
+import store from '@/store/store.ts'
 
-import App from './App.tsx'
-import '@/i18n/config.ts'
-import './index.css'
+import '@/assets/styles/index.css'
 import 'remixicon/fonts/remixicon.css'
-import "/node_modules/flag-icons/css/flag-icons.min.css";
-import "react-datepicker/dist/react-datepicker.css";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <Container />
       </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+     </BrowserRouter>
+  </React.StrictMode>,
 )

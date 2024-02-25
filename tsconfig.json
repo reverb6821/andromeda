@@ -13,7 +13,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noImplicitAny": false,
     "esModuleInterop": true,
 
     /* Linting */
@@ -21,12 +20,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
+         
     /* Path Aliases */
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     },
+    
     /* custom */
     "useUnknownInCatchVariables": false,
   },

@@ -1,0 +1,33 @@
+import http from '@/api/instance'
+
+import { {{pascalCase service}}Props } from './{{pascalCase service}}.properties'
+
+const getAll = () => {
+  return http.get('{{pathCase path}}');
+};
+
+const get =(id: number) => {
+  return http.get(`{{pathCase path}}/${id}`);
+};
+
+const create = (data: {{pascalCase service}}Props) => {
+  return http.post('{{pathCase path}}', data);
+};
+
+const update = (id: number, data: {{pascalCase service}}Props) => {
+  return http.put(`{{pathCase path}}/${id}`, data);
+};
+
+const remove = (id: number) => {
+  return http.delete(`{{pathCase path}}/${id}`);
+};
+
+const {{pascalCase service}}Service = {
+  getAll,
+  get,
+  create,
+  update,
+  remove,
+};
+
+export default {{pascalCase service}}Service;

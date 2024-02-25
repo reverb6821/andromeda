@@ -1,0 +1,15 @@
+import * as React from 'react';
+import { Outlet } from "react-router-dom"
+
+import './{{pascalCase layout}}.styles.scss'
+
+
+const {{pascalCase layout}}: React.FC = () => {
+    return(
+        <React.Fragment>
+            {{pascalCase layout}} Component
+            <Outlet />
+        </React.Fragment>
+)};
+
+export default {{pascalCase layout}}

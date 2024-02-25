@@ -1,0 +1,39 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as AlertStory from './Alert.stories.tsx';
+
+<Meta of={ AlertStory } title="Alert" />
+
+# Alert
+
+Description for Alert component.
+
+<Canvas of={ AlertStory.Danger } />
+
+## Usage
+
+```ts
+import Alert from '@/components/Alert/Alert;
+
+const Example = () => {
+  return (
+      <Alert
+        title='Done! '
+        alertStyle='success'
+        message='Lorem Ipsum Dolor Sit Amet'
+      />
+  );
+};
+
+export default Example;
+```
+
+#### Arguments
+-**title** - indicate the title of the alert
+- **message** - A string that represents the text content of the button.
+- **alertStyle** -  A string indicating whether the button should have a primary styling or not. Typically, a primary button stands out as the main action in a user interface. It accept one of following value: one of the possible values:
+  - "alert",
+  - "warn",
+  - "success".
+  - "info"
+- **icon** - A string indicating whether the button should have a icon. It accept remix icon font class
+

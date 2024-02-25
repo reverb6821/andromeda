@@ -6,7 +6,6 @@ import { Routes, Route } from "react-router-dom";
 const Home = React.lazy(()=> import('@/routes/Home/Home.tsx'))
 // ROUTES IMPORT
 
-
 const Container:React.FC =()=> {
   const isDarkMode = useSelector((content: RootState) => content.theme.isDarkMode) || null;
 

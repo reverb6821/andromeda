@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 
 import Badge from '@/components/Badge/Badge';
 import FlexContainer from '@/components/FlexContainer/FlexContainer';
+import Tooltip from '@/components/Tooltip/Tooltip';
+import Alert from '@/components/Alert/Alert';
 
 const Home: React.FC = () => {
     return(
@@ -17,7 +19,10 @@ const Home: React.FC = () => {
                     <Badge badgeStyle='secondary--info' label='Lorem Ipsum Dolor sit amet'  />
                     <Badge badgeStyle='secondary--info' label='Lorem Ipsum Dolor sit amet' icon='ri-error-warning-line' />
                 </FlexContainer>
-
+                <FlexContainer direction='row'>
+                    <Tooltip content='ciao' direction='bottom'/>
+                    <Alert title='DANGER' alertStyle='success' message='Lorem Ipsum' icon='ri-error-warning-line' />
+                </FlexContainer>
             </FlexContainer>
         </React.Fragment>
 )};

@@ -7,7 +7,7 @@ import * as FlexContainerStory from './FlexContainer.stories.tsx';
 
 Description for FlexContainer component.
 
-<Canvas of={ FlexContainerStory.Default } />
+<Canvas of={ FlexContainerStory.Column } />
 
 ## Usage
 
@@ -16,16 +16,23 @@ import FlexContainer from '@/components/FlexContainer/FlexContainer;
 
 const Example = () => {
   return (
-      <FlexContainer/>
+    <Grid direction='column' classNames='m-auto items-center justify-center dark:bg-slate-600'>
+      <div className='bg-emerald-600 py-4 px-2 w-64 max-md:w-full'>Box 1</div>
+      <div className='bg-sky-600 py-4 px-2 w-64 max-md:w-full'>Box 2</div>
+      <div className='bg-yellow-600 py-4 px-2 w-64 max-md:w-full'>Box 3</div>
+      <div className='bg-red-600 py-4 px-2 w-64 max-md:w-full'>Box 4</div>
+    </Grid>
   );
 };
 
-export default FlexContainer;
+export default Example;
 ```
 
 #### Arguments
 
-- **prop title** - prop description
-- **prop title** - prop description
-- **prop title** - prop description
-- **prop title** - prop description
+- **direction** - Indicate the flex direction. It accept:
+  - row
+  - row-reverse
+  - column
+  -column-reverse
+- **className** - Additional class

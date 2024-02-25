@@ -10,7 +10,7 @@ const meta: Meta<typeof Badge> = {
 export default meta;
 type Story = StoryObj<typeof Badge>;
 
-export const Default: Story = {
+export const Primary: Story = {
     args: {
       // ADD ARGS HERE
       badgeStyle: 'primary--info',
@@ -18,11 +18,29 @@ export const Default: Story = {
     },
   };
 
+  export const PrimaryIco: Story = {
+    args: {
+      // ADD ARGS HERE
+      badgeStyle: 'primary--info',
+      label:'Lorem Ipsum Dolor sit amet',
+      icon:'ri-error-warning-line',
+    },
+};
+
   export const Alert: Story = {
     args: {
       // ADD ARGS HERE
       badgeStyle: 'primary--alert',
       label:'Lorem Ipsum Dolor sit amet',
+    },
+  };
+
+  export const AlertIco: Story = {
+    args: {
+      // ADD ARGS HERE
+      badgeStyle: 'primary--alert',
+      label:'Lorem Ipsum Dolor sit amet',
+      icon: 'ri-alert-line'
     },
   };
 
@@ -34,6 +52,16 @@ export const Default: Story = {
     },
   };
 
+  export const WarnIco: Story = {
+    args: {
+      // ADD ARGS HERE
+      badgeStyle: 'primary--warn',
+      label:'Lorem Ipsum Dolor sit amet',
+      icon: 'ri-error-warning-line'
+    },
+  };
+
+
   export const Success: Story = {
     args: {
       // ADD ARGS HERE
@@ -42,20 +70,30 @@ export const Default: Story = {
     },
   };
 
-export const WithIco: Story = {
+  export const SuccessIco: Story = {
     args: {
       // ADD ARGS HERE
-      badgeStyle: 'primary--info',
+      badgeStyle: 'primary--success',
       label:'Lorem Ipsum Dolor sit amet',
-      icon:'ri-error-warning-line',
+      icon: 'ri-checkbox-circle-line'
     },
-};
+  };
+
 
 export const Secondary: Story = {
   args: {
     // ADD ARGS HERE
     badgeStyle: 'secondary',
     label:'Lorem Ipsum Dolor sit amet',
+  },
+};
+
+export const SecondaryIco: Story = {
+  args: {
+    // ADD ARGS HERE
+    badgeStyle: 'primary--info',
+    label:'Lorem Ipsum Dolor sit amet',
+    icon:'ri-error-warning-line',
   },
 };
 
@@ -67,11 +105,30 @@ export const SecondaryAlert: Story = {
   },
 };
 
+export const SecondaryAlertIco: Story = {
+  args: {
+    // ADD ARGS HERE
+    badgeStyle: 'primary--alert',
+    label:'Lorem Ipsum Dolor sit amet',
+    icon:'ri-alert-line',
+  },
+};
+
+
 export const SecondaryWarn: Story = {
   args: {
     // ADD ARGS HERE
     badgeStyle: 'secondary--warn',
     label:'Lorem Ipsum Dolor sit amet',
+  },
+};
+
+export const SecondaryWarnIco: Story = {
+  args: {
+    // ADD ARGS HERE
+    badgeStyle: 'secondary--warn',
+    label:'Lorem Ipsum Dolor sit amet',
+    icon: 'ri-error-warning-line'
   },
 };
 
@@ -86,8 +143,8 @@ export const SecondarySuccess: Story = {
 export const SecondaryWithIco: Story = {
   args: {
     // ADD ARGS HERE
-    badgeStyle: 'secondary',
+    badgeStyle: 'secondary--success',
     label:'Lorem Ipsum Dolor sit amet',
-    icon:'ri-error-warning-line',
+    icon:'ri-checkbox-circle-line',
   },
 };

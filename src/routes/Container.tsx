@@ -4,6 +4,7 @@ import { RootState } from "@/store/store";
 import { Routes, Route } from "react-router-dom";
 
 const Home = React.lazy(()=> import('@/routes/Home/Home.tsx'))
+const Form = React.lazy(()=> import('@/routes/Form/Form.tsx'))
 // ROUTES IMPORT
 
 const Container:React.FC =()=> {
@@ -11,10 +12,11 @@ const Container:React.FC =()=> {
 
   return (
     <React.Fragment>
-      <div className={`App w-full ${isDarkMode ? "dark" : ""}`}>
+      <div className={`App w-full ${isDarkMode ? "dark" : ""} `}>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Routes>
               <Route path="/home" element={<Home />} />
+<Route path="/form" element={<Form />} />
 // COMPONENTS ROUTES
           </Routes>
         </React.Suspense>

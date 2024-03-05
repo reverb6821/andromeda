@@ -1,14 +1,14 @@
 import classnames from "classnames";
 import * as React from 'react';
 
-import BadgeProps from './Badge.properties'
+import BadgeProperties from './Badge.properties'
 
-const Badge: React.FC<BadgeProps> = ({ badgeStyle, label, icon }) => {
+const Badge: React.FC<BadgeProperties> = ({ badgeStyle, label, icon }) => {
     return(
         <React.Fragment>
         <span
           className={classnames(
-            "text-sm font-medium mr-2 px-2.5 py-0.5 rounded ",
+            "text-sm font-medium mr-2 px-2.5 py-0.5 rounded shadow-xl",
             {
               "bg-sky-800 text-sky-100": badgeStyle === 'primary',
               "bg-alert-color text-red-100": badgeStyle === 'primary--alert',

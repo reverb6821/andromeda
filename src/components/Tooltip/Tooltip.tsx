@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import TooltipProps from './Tooltip.properties'
+import TooltipProperties from './Tooltip.properties'
 
-const Tooltip: React.FC<TooltipProps> = ({ content, direction, delay }) => {
+const Tooltip: React.FC<TooltipProperties> = ({ content, direction, delay }) => {
     const [active, setActive] = React.useState(false);
     let timeout: NodeJS.Timeout | null;
 

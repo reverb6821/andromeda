@@ -1,9 +1,9 @@
 import classnames from 'classnames';
 import * as React from 'react';
 
-import FlexContainerProps from './FlexContainer.properties'
+import FlexContainerProperties from './FlexContainer.properties'
 
-const FlexContainer: React.FC<FlexContainerProps> = ({children, className, direction}) => {
+const FlexContainer: React.FC<FlexContainerProperties> = ({children, className, direction}) => {
     return(
         <React.Fragment>
             <div className={classnames(`${className} flex p-2`,

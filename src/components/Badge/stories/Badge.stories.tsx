@@ -91,7 +91,7 @@ export const Secondary: Story = {
 export const SecondaryIco: Story = {
   args: {
     // ADD ARGS HERE
-    badgeStyle: 'primary--info',
+    badgeStyle: 'secondary--info',
     label:'Lorem Ipsum Dolor sit amet',
     icon:'ri-error-warning-line',
   },
@@ -108,7 +108,7 @@ export const SecondaryAlert: Story = {
 export const SecondaryAlertIco: Story = {
   args: {
     // ADD ARGS HERE
-    badgeStyle: 'primary--alert',
+    badgeStyle: 'secondary--alert',
     label:'Lorem Ipsum Dolor sit amet',
     icon:'ri-alert-line',
   },

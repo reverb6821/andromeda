@@ -1,6 +1,6 @@
 import http from '@/api/instance'
 
-import { {{pascalCase service}}Props } from './{{pascalCase service}}.properties'
+import { {{pascalCase service}}Properties } from './{{pascalCase service}}.properties'
 
 const getAll = () => {
   return http.get('{{pathCase path}}');
@@ -10,11 +10,11 @@ const get =(id: number) => {
   return http.get(`{{pathCase path}}/${id}`);
 };
 
-const create = (data: {{pascalCase service}}Props) => {
+const create = (data: {{pascalCase service}}Properties) => {
   return http.post('{{pathCase path}}', data);
 };
 
-const update = (id: number, data: {{pascalCase service}}Props) => {
+const update = (id: number, data: {{pascalCase service}}Properties) => {
   return http.put(`{{pathCase path}}/${id}`, data);
 };
 

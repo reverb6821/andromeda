@@ -113,7 +113,7 @@ export default function (plop) {
                 type: 'modify',
                 path: '../src/routes/Container.tsx',
                 pattern: /(\/\/ ROUTES IMPORT)/g,
-                template: 'const {{pascalCase route}} = React.lazy(()=> import(\'@/routes/{{pascalCase route}}/{{pascalCase route}}.tsx))\'\n$1',
+                template: 'const {{pascalCase route}} = React.lazy(()=> import(\'@/routes/{{pascalCase route}}/{{pascalCase route}}.tsx\'))\n$1',
                 // template: 'import {{pascalCase route}} from \'@/routes/{{pascalCase route}}/{{pascalCase route}}.tsx\'\n$1',
             },
             {

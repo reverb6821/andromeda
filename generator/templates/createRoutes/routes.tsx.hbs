@@ -1,0 +1,15 @@
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
+
+const {{pascalCase route}}: React.FC = () => {
+    return(
+        <React.Fragment>
+            <Helmet>
+                <title>Andromeda - {{pascalCase route}}</title>
+                <meta name="{{lowerCase route}}" content="A description of my amazing React app" />
+            </Helmet>
+            {{pascalCase route}} Route
+        </React.Fragment>
+)};
+
+export default {{pascalCase route}}

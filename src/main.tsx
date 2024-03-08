@@ -1,20 +1,14 @@
-import React from 'react'
+import * as React from 'react'
 import {createRoot} from 'react-dom/client'
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
 
-import Container from '@/routes/Container'
-import store from '@/store/store.ts'
-
-import '@/assets/styles/index.css'
-import 'remixicon/fonts/remixicon.css'
+import Router from '@/routes/Router'
+import '@/assets/style/index.css'
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-     <BrowserRouter>
-      <Provider store={store}>
-        <Container />
-      </Provider>
+         <BrowserRouter>
+        <Router />
      </BrowserRouter>
   </React.StrictMode>,
 )

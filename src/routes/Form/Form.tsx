@@ -8,7 +8,7 @@ const Form: React.FC = () => {
                 <title>Andromeda - Form</title>
                 <meta name="form" content="A description of my amazing React app" />
             </Helmet>
-            Form Component
+            Form Route
         </React.Fragment>
 )};
 

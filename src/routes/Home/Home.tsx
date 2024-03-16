@@ -8,7 +8,7 @@ const Home: React.FC = () => {
                 <title>Andromeda - Home</title>
                 <meta name="home" content="A description of my amazing React app" />
             </Helmet>
-           <button>CLICC </button>
+            Home Route
         </React.Fragment>
 )};
 

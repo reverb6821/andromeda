@@ -27,8 +27,8 @@
     },
     /* custom */
     "useUnknownInCatchVariables": false,
-    "allowJs": true,
+    "esModuleInterop": true,
   },
-  "include": ["src"],
+  "include": ["src", "./jest.setup.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

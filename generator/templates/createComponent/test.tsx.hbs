@@ -1,0 +1,10 @@
+import { render } from '@testing-library/react';
+
+import {{pascalCase component}} from '../{{pascalCase component}}';
+
+describe('{{pascalCase component}}', () => {
+  test('rendered component', () => {
+    const { getByText } = render(<{{pascalCase component}} />);
+    expect(getByText('{{pascalCase component}} Component')).toBeInTheDocument();
+  });
+})

@@ -1,0 +1,10 @@
+import { render } from '@testing-library/react';
+
+import {{pascalCase route}} from '../{{pascalCase route}}';
+
+describe('{{pascalCase route}}', () => {
+  test('rendered component', () => {
+    const { getByText } = render(<{{pascalCase route}} />);
+    expect(getByText('{{pascalCase route}} Route')).toBeInTheDocument();
+  });
+})

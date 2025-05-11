@@ -1,15 +1,10 @@
-import * as React from 'react'
-import {createRoot} from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-
-import Router from '@/routes/Router'
-import '@/assets/style/index.css'
-import 'remixicon/fonts/remixicon.css'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './assets/styles/index.css'
+import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-         <BrowserRouter>
-        <Router />
-     </BrowserRouter>
-  </React.StrictMode>,
+  <StrictMode>
+    <App />
+  </StrictMode>,
 )

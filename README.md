@@ -1,41 +1,54 @@
-# Initialize project
+# React + TypeScript + Vite
 
-* install pnpm ```npm install -g pnpm```
-* Launch ```pnpm setup project```
-* Launch ```pnpm prepare```
-* Launch the app with ```pnpm run dev```
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Generator
-The generator is used to automatically generate standard structure of components and elements that can be modified later to make them suitable for use. To use it, launch the command ```pnpm generate```and select the parameter you are interested in.
-Is present:
-* **page**: the father element (example Dashboard, Main ecc).
-* **route**: the children element, to insert inside the page.
-* **component**: a simply component, like form, table etc.
-* **hook**: if you need a custom hook, create the structure with this command.
+Currently, two official plugins are available:
 
-## commit convention explaination
-in follow the conventionalcommit:[https://www.conventionalcommits.org/en/v1.0.0/].
-This is an example of valid commit msg:
-```feat: allow provided config object to extend other configs```.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-This is the accepted msg:
-* **chore**: Indicates changes related to maintenance tasks or routine activities. Examples: Updating compilation scripts, fixing typos, optimizing Grunt tasks, etc12.
-* **docs**: Refers to changes in documentation. Examples: Updating documentation, correcting errors in comments, etc12.
-* **feat**: Indicates the addition of a new feature or component. Examples: Implementation of a new API, addition of a user feature, etc12.
-* **fix**: Represents a bug fix. Examples: Fixing a runtime error, correcting a display problem, etc12.
-* **perf**: Indicates changes that improve code performance. Examples: Optimizing algorithms, reducing loading times, etc12.
-* **refactor**: Refers to changes in code that do not fix a bug or add new functionality. Examples: Restructuring a class, improving code readability, etc12.
-* **revert**: Indicates changes that undo a previous commit. Examples: Restoring a previous version of code, undoing an incorrect change, etc12.
-* **style**: Represents changes that affect only formatting, whitespace, or semicolons. Examples: Adjusting indentation, correcting formatting errors, etc12.
+## Expanding the ESLint configuration
 
-If you need the scope of commit you can addit.
-Example
-```feat(UI): added new table to user page```
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## .huskyrc config
-need css, add this on .lintstagedrc
-```    
- "*/**/*.{json,css,md}": [
-    //command for style lint
-]
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
 ```

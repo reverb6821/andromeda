@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+# 🌌 Andromeda – Component 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Andromeda**, a collection of reusable UI components designed for modern web applications, built with **React**, **shadcn/ui**, and **Tailwind CSS**. Andromeda aims to provide a flexible, scalable, and accessible UI toolkit for developers and designers alike.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ **Accessibility (a11y)**: All components follow WAI-ARIA guidelines for accessibility.
+- 🎨 **Design System-first**: A consistent, flexible design system with configurable variants.
+- 🧱 **Composability**: Each component is modular and can be easily extended or combined with others.
+- 🌙 **Dark/Light Themes**: Built-in support for light and dark themes, leveraging `next-themes` or other providers.
+- 🔬 **Automated Testing**: Every component is tested with **Vitest** and **React Testing Library**, ensuring reliable behavior across all components.
 
-## Expanding the ESLint configuration
+## 🧩 Component Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Each component in **Andromeda** follows a simple, predictable structure. The folder for each component contains:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **React Component** (`badge.tsx`)
+- **Story for Storybook** (`badge.stories.tsx`)
+- **Automated Test** (`badge.test.tsx`)
+
+## ✨ Available Components
+
+- **`NovaTag`** – Customizable, semantic badge components
+- ...and many more components coming soon!
+
+---
+
+## 📚 How to Use
+
+You can start using the components by simply importing them and integrating them into your project:
+
+```tsx
+import { NovaTag } from "@/components/andromeda/nova-tag"
+
+<NovaTag variant="success" label="Operation successful!" />
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧪 Automated Testing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Every component in **Andromeda** comes with automated tests using **Vitest** and **React Testing Library**.  
+Additionally, Storybook stories are used to verify the rendering behavior of the components, ensuring they are always displayed correctly.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🛠️ How to Contribute
+
+1. **Add a new component** to the `components/andromeda/` folder
+2. **Create the Story** in `.stories.tsx` format
+3. **Write the tests** in `.test.tsx` format
+4. **Run the tests** with `pnpm test` or `npx vitest run` to ensure everything is working properly
+
+It’s simple and fast!
+
+## 🌓 Requirements
+
+- **React 18+**
+- **Tailwind CSS 3.x**
+- **shadcn/ui**
+- **Storybook (with Vite)**
+- **Vitest for automated testing**

@@ -1,41 +1,66 @@
-// components/andromeda/InfoStar/InfoStar.test.tsx
-
 import { render, screen, waitFor } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeAll } from 'vitest'
 import { InfoStar } from '../info-star'
 import userEvent from '@testing-library/user-event'
 
+// Optional: Mock ResizeObserver if the tooltip library uses it
+beforeAll(() => {
+  global.ResizeObserver = class {
+    observe() { }
+    unobserve() { }
+    disconnect() { }
+  } as any
+})
+
 describe('InfoStar', () => {
-  it('renders child element', () => {
+  it('renders the child element', () => {
     render(
       <InfoStar content="Tooltip text">
         <button>Hover me</button>
       </InfoStar>
     )
-    expect(screen.getByText('Hover me')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /hover me/i })).toBeInTheDocument()
   })
 
-  it('shows tooltip on hover', async () => {
+  it('displays the tooltip on hover', async () => {
     render(
       <InfoStar content="Tooltip text">
         <button>Hover me</button>
       </InfoStar>
     )
-    await userEvent.hover(screen.getByRole('button'))
+
+    const button = screen.getByRole('button', { name: /hover me/i })
+    await userEvent.hover(button)
+
     await waitFor(() => {
-      expect(screen.getByText('Tooltip text')).toBeVisible()
+      // Flexible matcher in case content is split
+      expect(screen.getByText((_, element) =>
+        element?.textContent === 'Tooltip text'
+      )).toBeVisible()
     })
   })
 
-  it('supports custom content', async () => {
+  it('supports rendering custom content', async () => {
     render(
       <InfoStar content={<span data-testid="custom">Custom Tooltip</span>}>
         <button>Hover me</button>
       </InfoStar>
     )
-    await userEvent.hover(screen.getByRole('button'))
+
+    const button = screen.getByRole('button', { name: /hover me/i })
+    await userEvent.hover(button)
+
     await waitFor(() => {
-      expect(screen.getByTestId('custom')).toBeInTheDocument()
+      const tooltips = screen.queryAllByTestId('custom')
+
+      // Fallback a visibility check che funzioni anche con position: fixed
+      const visibleTooltip = tooltips.find(el => {
+        const style = window.getComputedStyle(el)
+        return style.visibility !== 'hidden' && style.display !== 'none' && style.opacity !== '0'
+      })
+
+      expect(visibleTooltip).toBeDefined()
+      expect(visibleTooltip).toHaveTextContent('Custom Tooltip')
     })
   })
 })

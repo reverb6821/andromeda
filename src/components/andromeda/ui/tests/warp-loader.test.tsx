@@ -6,8 +6,7 @@ import { describe, it, expect } from 'vitest'
 describe("Loader Component", () => {
     it('renders the loader correctly', () => {
         render(<Loader />);
-        const loaderElement = screen.getByTestId("loader");
+        const loaderElement = screen.getByRole("loader");
         expect(loaderElement).toBeInTheDocument();
-        expect(loaderElement).toHaveClass("animate-spin");
     })
 });

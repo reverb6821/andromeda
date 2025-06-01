@@ -1,5 +1,5 @@
 {
-    "$schema": "TODO",
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
     "name": "andromeda",
     "homepage": "TODO",
     "items": [

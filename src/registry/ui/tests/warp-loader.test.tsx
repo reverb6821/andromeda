@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Loader from "@/components/andromeda/ui/warp-loader";
+import Loader from "@/registry/ui/warp-loader";
 import { describe, it, expect } from 'vitest'
 
 describe("Loader Component", () => {

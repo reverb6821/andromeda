@@ -1,6 +1,6 @@
 // __tests__/custom-card.test.tsx
 import { render, screen } from "@testing-library/react"
-import NebulaPanel from "@/components/andromeda/ui/nebula-panel"
+import NebulaPanel from "@/registry/ui/nebula-panel"
 import { CircleUser } from "lucide-react"
 import { describe, it, expect } from "vitest"
 

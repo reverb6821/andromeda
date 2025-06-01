@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Loader from "@/components/andromeda/ui/warp-loader"; // Assicurati che il percorso sia corretto
+import Loader from "@/registry/ui/warp-loader"; // Assicurati che il percorso sia corretto
 
 const meta: Meta<typeof Loader> = {
   title: "Components/Loader",

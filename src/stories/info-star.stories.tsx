@@ -1,4 +1,4 @@
-import { InfoStar } from '../components/andromeda/ui/info-star'
+import { InfoStar } from '../registry/ui/info-star'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof InfoStar> = {

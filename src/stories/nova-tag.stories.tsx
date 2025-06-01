@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Check, AlertCircle, AlertTriangle } from "lucide-react"
-import { NovaTag } from "../components/andromeda/ui/nova-tag"
+import { NovaTag } from "../registry/ui/nova-tag"
 
 const meta: Meta<typeof NovaTag> = {
   title: "Andromeda/Components/UI Elements/NovaTag",

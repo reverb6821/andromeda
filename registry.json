@@ -1,0 +1,20 @@
+{
+    "$schema": "TODO",
+    "name": "andromeda",
+    "homepage": "TODO",
+    "items": [
+        {
+            "name": "info-star",
+            "component": "registry:component",
+            "title": "Info Star",
+            "description": "Tooltip component.",
+            "registrryDependencies": [
+                "tooltip"
+            ],
+            "files": [{
+                "path": "registry/ui/info-star.tsx",
+                "type": "registry:component"
+            }]
+        }
+    ]
+}

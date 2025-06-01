@@ -1,10 +1,10 @@
 // components/ui/custom-card.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react"
-import NebulaPanel from "@/components/andromeda/ui/nebula-panel"
+import NebulaPanel from "@/registry/ui/nebula-panel"
 import { CircleUser } from "lucide-react"
 
 const meta: Meta<typeof NebulaPanel> = {
-  title: "UI/NebulaPanel",
+  title: "Andromeda/Components/UI Elements/NebulaPanel",
   component: NebulaPanel,
   tags: ["autodocs"],
   argTypes: {

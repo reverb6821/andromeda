@@ -1,0 +1,21 @@
+{
+  "name": "@andromeda/tokens",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/tokens.css",
+    "./dark": "./dist/themes/dark.css",
+    "./light": "./dist/themes/light.css",
+    "./tokens.css": "./dist/tokens.css"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -r src/* dist/"
+  }
+}

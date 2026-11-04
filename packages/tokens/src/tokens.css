@@ -1,0 +1,8 @@
+:root {
+  --ds-color-primary: #3b82f6;
+  --ds-color-text: #111827;
+  --ds-color-surface: #fff;
+  --ds-radius-md: 6px;
+  --ds-space-2: 0.5rem;
+  --ds-font-base: system-ui, sans-serif;
+}

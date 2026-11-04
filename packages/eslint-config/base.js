@@ -1,32 +1,22 @@
-import js from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
-import turboPlugin from "eslint-plugin-turbo";
-import tseslint from "typescript-eslint";
-import onlyWarn from "eslint-plugin-only-warn";
+import js from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import turboPlugin from 'eslint-plugin-turbo';
+import tseslint from 'typescript-eslint';
 
 /**
- * A shared ESLint configuration for the repository.
+ * Config ESLint condivisa per il repository.
  *
- * @type {import("eslint").Linter.Config}
- * */
+ * @type {import("eslint").Linter.Config[]}
+ */
 export const config = [
   js.configs.recommended,
-  eslintConfigPrettier,
   ...tseslint.configs.recommended,
+  eslintConfigPrettier,
   {
-    plugins: {
-      turbo: turboPlugin,
-    },
-    rules: {
-      "turbo/no-undeclared-env-vars": "warn",
-    },
+    plugins: { turbo: turboPlugin },
+    rules: { 'turbo/no-undeclared-env-vars': 'warn' },
   },
   {
-    plugins: {
-      onlyWarn,
-    },
-  },
-  {
-    ignores: ["dist/**"],
+    ignores: ['**/dist/**', '**/storybook-static/**', '**/.turbo/**', '**/custom-elements.json'],
   },
 ];

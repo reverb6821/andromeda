@@ -1,0 +1,37 @@
+{
+  "name": "@andromeda/components",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": true,
+  "customElements": "./custom-elements.json",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/components/*/index.d.ts",
+      "default": "./dist/components/*/index.js"
+    },
+    "./custom-elements.json": "./custom-elements.json",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "custom-elements.json"],
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && cem analyze --config custom-elements-manifest.config.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "check:package": "publint && attw --pack . --profile esm-only"
+  },
+  "peerDependencies": {
+    "lit": "^3.3.3"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "^10.0.1",
+    "lit": "^3.3.3"
+  }
+}

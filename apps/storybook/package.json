@@ -1,0 +1,27 @@
+{
+  "name": "@andromeda/storybook",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build"
+  },
+  "dependencies": {
+    "@andromeda/components": "workspace:*",
+    "@andromeda/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.5",
+    "@storybook/addon-docs": "^10.6.5",
+    "@storybook/web-components-vite": "^10.6.5",
+    "@types/bun": "latest",
+    "lit": "^3.3.3",
+    "storybook": "^10.6.5",
+    "vite": "^8.3.5",
+    "@repo/typescript-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}

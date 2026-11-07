@@ -1,0 +1,583 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "module": "src/ui/button/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "module": "src/ui/card/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "module": "src/ui/badge/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ui/badge/badge.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AndBadge",
+          "cssProperties": [
+            {
+              "description": "Neutral label color",
+              "name": "--ds-color-status-neutral"
+            },
+            {
+              "description": "Neutral badge background",
+              "name": "--ds-color-status-neutral-surface"
+            },
+            {
+              "description": "Informational label color",
+              "name": "--ds-color-status-info"
+            },
+            {
+              "description": "Informational badge background",
+              "name": "--ds-color-status-info-surface"
+            },
+            {
+              "description": "Success label color",
+              "name": "--ds-color-status-success"
+            },
+            {
+              "description": "Success badge background",
+              "name": "--ds-color-status-success-surface"
+            },
+            {
+              "description": "Warning label color",
+              "name": "--ds-color-status-warning"
+            },
+            {
+              "description": "Warning badge background",
+              "name": "--ds-color-status-warning-surface"
+            },
+            {
+              "description": "Danger label color",
+              "name": "--ds-color-status-danger"
+            },
+            {
+              "description": "Danger badge background",
+              "name": "--ds-color-status-danger-surface"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "Badge surface",
+              "name": "badge"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Badge label",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'neutral' | 'info' | 'success' | 'warning' | 'danger'"
+              },
+              "default": "'neutral'",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "animation",
+              "type": {
+                "text": "'none' | 'pulse'"
+              },
+              "default": "'none'",
+              "attribute": "animation",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "220",
+              "attribute": "duration",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "motion",
+              "type": {
+                "text": "'auto' | 'none'"
+              },
+              "default": "'auto'",
+              "attribute": "motion",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "playAnimation",
+              "return": {
+                "type": {
+                  "text": "Animation | undefined"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'neutral' | 'info' | 'success' | 'warning' | 'danger'"
+              },
+              "default": "'neutral'",
+              "fieldName": "variant"
+            },
+            {
+              "name": "animation",
+              "type": {
+                "text": "'none' | 'pulse'"
+              },
+              "default": "'none'",
+              "fieldName": "animation"
+            },
+            {
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "220",
+              "fieldName": "duration"
+            },
+            {
+              "name": "motion",
+              "type": {
+                "text": "'auto' | 'none'"
+              },
+              "default": "'auto'",
+              "fieldName": "motion"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "and-badge",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AndBadge",
+          "declaration": {
+            "name": "AndBadge",
+            "module": "src/ui/badge/badge.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ui/badge/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "and-badge",
+          "declaration": {
+            "name": "AndBadge",
+            "module": "/src/ui/badge/badge.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ui/badge/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AndBadge",
+          "declaration": {
+            "name": "AndBadge",
+            "module": "./badge.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ui/button/button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AndButton",
+          "cssProperties": [
+            {
+              "description": "Colore di sfondo",
+              "name": "--ds-color-primary"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "L'elemento button nativo",
+              "name": "button"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Contenuto del pulsante",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'primary' | 'secondary'"
+              },
+              "default": "'primary'",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "animation",
+              "type": {
+                "text": "'none' | 'press'"
+              },
+              "default": "'none'",
+              "attribute": "animation",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "220",
+              "attribute": "duration",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "motion",
+              "type": {
+                "text": "'auto' | 'none'"
+              },
+              "default": "'auto'",
+              "attribute": "motion",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "playAnimation",
+              "return": {
+                "type": {
+                  "text": "Animation | undefined"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#onClick",
+              "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "name": "andromeda-click",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Emesso al click"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'primary' | 'secondary'"
+              },
+              "default": "'primary'",
+              "fieldName": "variant"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "animation",
+              "type": {
+                "text": "'none' | 'press'"
+              },
+              "default": "'none'",
+              "fieldName": "animation"
+            },
+            {
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "220",
+              "fieldName": "duration"
+            },
+            {
+              "name": "motion",
+              "type": {
+                "text": "'auto' | 'none'"
+              },
+              "default": "'auto'",
+              "fieldName": "motion"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "and-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AndButton",
+          "declaration": {
+            "name": "AndButton",
+            "module": "src/ui/button/button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ui/button/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "and-button",
+          "declaration": {
+            "name": "AndButton",
+            "module": "/src/ui/button/button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ui/button/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AndButton",
+          "declaration": {
+            "name": "AndButton",
+            "module": "./button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ui/card/card.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AndCard",
+          "cssProperties": [
+            {
+              "description": "Card background color",
+              "name": "--ds-color-surface"
+            },
+            {
+              "description": "Card text color",
+              "name": "--ds-color-text"
+            },
+            {
+              "description": "Card border color",
+              "name": "--ds-color-border"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "Card surface",
+              "name": "card"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Main card content",
+              "name": ""
+            },
+            {
+              "description": "Optional card header",
+              "name": "header"
+            },
+            {
+              "description": "Optional card footer",
+              "name": "footer"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "animation",
+              "type": {
+                "text": "'none' | 'reveal'"
+              },
+              "default": "'none'",
+              "attribute": "animation",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "220",
+              "attribute": "duration",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "motion",
+              "type": {
+                "text": "'auto' | 'none'"
+              },
+              "default": "'auto'",
+              "attribute": "motion",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "playAnimation",
+              "return": {
+                "type": {
+                  "text": "Animation | undefined"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "animation",
+              "type": {
+                "text": "'none' | 'reveal'"
+              },
+              "default": "'none'",
+              "fieldName": "animation"
+            },
+            {
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "220",
+              "fieldName": "duration"
+            },
+            {
+              "name": "motion",
+              "type": {
+                "text": "'auto' | 'none'"
+              },
+              "default": "'auto'",
+              "fieldName": "motion"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "and-card",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AndCard",
+          "declaration": {
+            "name": "AndCard",
+            "module": "src/ui/card/card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ui/card/define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "and-card",
+          "declaration": {
+            "name": "AndCard",
+            "module": "/src/ui/card/card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ui/card/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AndCard",
+          "declaration": {
+            "name": "AndCard",
+            "module": "./card.js"
+          }
+        }
+      ]
+    }
+  ]
+}

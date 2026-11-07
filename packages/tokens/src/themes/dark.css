@@ -1,4 +1,21 @@
 [data-theme='dark'] {
-  --ds-color-text: #f9fafb;
-  --ds-color-surface: #111827;
+  --ds-color-primary: #fafafa;
+  --ds-color-on-primary: #18181b;
+  --ds-color-secondary: #27272a;
+  --ds-color-on-secondary: #fafafa;
+  --ds-color-text: #fafafa;
+  --ds-color-surface: #09090b;
+  --ds-color-border: #27272a;
+  --ds-color-muted: #a1a1aa;
+  --ds-color-accent: #fafafa;
+  --ds-color-status-neutral: #d4d4d8;
+  --ds-color-status-neutral-surface: #27272a;
+  --ds-color-status-info: #93c5fd;
+  --ds-color-status-info-surface: #172554;
+  --ds-color-status-success: #86efac;
+  --ds-color-status-success-surface: #052e16;
+  --ds-color-status-warning: #fde047;
+  --ds-color-status-warning-surface: #422006;
+  --ds-color-status-danger: #fca5a5;
+  --ds-color-status-danger-surface: #450a0a;
 }

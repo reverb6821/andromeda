@@ -4,24 +4,29 @@
   "type": "module",
   "license": "MIT",
   "sideEffects": true,
-  "customElements": "./custom-elements.json",
+  "customElements": "custom-elements.json",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
     "./*": {
-      "types": "./dist/components/*/index.d.ts",
-      "default": "./dist/components/*/index.js"
+      "types": "./dist/ui/*/index.d.ts",
+      "default": "./dist/ui/*/index.js"
     },
     "./custom-elements.json": "./custom-elements.json",
     "./package.json": "./package.json"
   },
-  "files": ["dist", "custom-elements.json"],
-  "publishConfig": { "access": "public" },
+  "files": [
+    "dist",
+    "custom-elements.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json && cem analyze --config custom-elements-manifest.config.mjs",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit -p tsconfig.build.json",
     "lint": "eslint .",
     "check:package": "publint && attw --pack . --profile esm-only"
   },
